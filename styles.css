@@ -1,0 +1,73 @@
+/* Базовые стили */
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f6f7; color: #333; }
+
+/* Переключение вкладок */
+.page-view { display: none; animation: fadeIn 0.3s ease-in-out; padding: 20px; }
+.page-view.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Навигация */
+.main-nav { text-align: center; margin-bottom: 20px; }
+.nav-btn {
+  padding: 10px 20px; margin: 0 5px; cursor: pointer;
+  border: 1px solid #ccc; background: #fff; border-radius: 4px;
+}
+.nav-btn.active { background: #3498db; color: white; border-color: #3498db; }
+
+/* Сетка сервисов */
+.section-title { margin-top: 0; color: #2c3e50; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;
+}
+.service-card {
+  display: block; padding: 15px; background: #fff; border: 1px solid #ddd;
+  border-radius: 8px; text-decoration: none; color: #333; transition: 0.2s;
+}
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.service-card .icon { font-size: 24px; margin-bottom: 10px; color: #3498db; }
+.service-card .card-title { margin: 0 0 8px 0; font-size: 16px; }
+.service-card .card-desc { margin: 0; font-size: 13px; color: #777; }
+
+/* Карточка-кнопка перехода на расписание */
+.schedule-card {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 20px; border-radius: 12px; background: #fff;
+  border: 1px solid #e0e0e0; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  cursor: pointer; transition: all 0.2s ease; max-width: 320px;
+}
+.schedule-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: #3498db; }
+.schedule-card .card-icon { font-size: 28px; margin-bottom: 12px; }
+.schedule-card .card-title { margin: 0 0 8px 0; font-size: 18px; color: #2c3e50; }
+.schedule-card .card-desc { margin: 0; color: #7f8c8d; font-size: 14px; line-height: 1.4; }
+
+/* Дни недели */
+.days-container {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;
+}
+.day-btn {
+  padding: 10px 16px; border-radius: 20px; border: 1px solid #ddd;
+  background: #fff; cursor: pointer; font-size: 14px;
+}
+.day-btn.active {
+  background: #3498db; color: white; border-color: #3498db;
+}
+
+/* Карточки занятий */
+.cards-container {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;
+}
+.class-card {
+  border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #fff;
+}
+.card-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; color: #2c3e50; }
+.tags span {
+  display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; color: white;
+}
+.tag-lecture { background: #27ae60; }
+.tag-practice { background: #f39c12; }
+.tag-lab { background: #c0392b; }
+.tag-group { background: #95a5a6; }
+.no-classes {
+  text-align: center; color: #7f8c8d; padding: 40px; grid-column: 1 / -1;
+  font-size: 16px;
+}
