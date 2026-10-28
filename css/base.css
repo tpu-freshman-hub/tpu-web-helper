@@ -13,9 +13,9 @@
 
   --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  --color-lecture: #ffeb3b;
-  --color-practice: #4caf50;
-  --color-lab: #2196f3;
+  --color-lecture: #5ab8f6;
+  --color-practice: #e6da3b;
+  --color-lab: #12e18b;
 }
 
 * {
@@ -37,7 +37,7 @@ body {
 }
 
 .section-title {
-  color: #2c3e50;
+  color: var(--color-text);
   margin-top: 0;
   margin-bottom: 24px;
 }
