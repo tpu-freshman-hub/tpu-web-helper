@@ -1,6 +1,6 @@
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
   margin-bottom: 60px;
 }
@@ -8,17 +8,17 @@
 .service-card {
   display: block;
   padding: 20px;
-  background-color: var(--color-surface);
+  background-color: var(--color-bg-card);
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--color-text);
-  border: 1px solid var(--color-border);
-  transition: var(--transition, all 0.2s ease);
+  border: 1px solid #eee;
+  transition: var(--transition);
 }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-md);
   border-color: var(--color-accent);
 }
 
@@ -49,19 +49,19 @@
   width: 100%;
   max-width: 800px;
   padding: 28px;
-  background-color: var(--color-surface);
+  background-color: var(--color-bg-card);
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--color-accent);
   border: 2px solid var(--color-accent);
-  transition: var(--transition, all 0.2s ease);
+  transition: var(--transition);
 }
 
 .schedule-cta:hover {
   background-color: var(--color-accent);
   color: var(--color-text-white);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .schedule-cta i {
@@ -84,17 +84,22 @@
 .schedule-cta__text {
   margin: 6px 0 0 0;
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .schedule-cta:not(:hover) .schedule-cta__text {
   color: var(--color-text-muted);
 }
 
+.site-header, .site-footer {
+  padding: 16px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
 .site-footer {
-  padding: 24px 0;
-  background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  border-bottom: none;
+  border-top: 1px solid #eee;
   margin-top: 40px;
   text-align: center;
 }

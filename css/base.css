@@ -1,29 +1,19 @@
 :root {
   --color-bg: #f4f6f9;
-  --color-surface: #ffffff;
+  --color-bg-card: #ffffff;
   --color-text: #333333;
   --color-text-muted: #777777;
   --color-accent: #3498db;
-  --color-border: #eeeeee;
+  --color-accent-hover: #2980b9;
   --color-text-white: #ffffff;
-
   --radius: 12px;
-  --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
-  --shadow-sticky: 0 2px 10px rgba(0, 0, 0, 0.08);
-
-  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  --color-lecture: #ffeb3b;
-  --color-practice: #4caf50;
-  --color-lab: #2196f3;
-}
-
-* {
-  box-sizing: border-box;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease;
 }
 
 body {
-  font-family: var(--font);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
@@ -40,63 +30,6 @@ body {
   color: #2c3e50;
   margin-top: 0;
   margin-bottom: 24px;
-}
-
-/* Стили шапки */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sticky);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 56px;
-}
-
-.site-header__logo {
-  font-weight: 700;
-  color: var(--color-accent);
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-.site-nav {
-  display: flex;
-  gap: 16px;
-}
-
-.site-nav__link {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  min-width: 44px;
-  min-height: 44px;
-  justify-content: center;
-  color: var(--color-text);
-  text-decoration: none;
-  border-radius: var(--radius);
-  transition: var(--transition, all 0.2s ease);
-}
-
-.site-nav__link:hover {
-  background-color: var(--color-border);
-}
-
-.site-nav__link.is-active,
-.site-nav__link[aria-current="page"] {
-  color: var(--color-accent);
-  background-color: rgba(52, 152, 219, 0.1);
-}
-
-.site-nav__link.is-active:hover,
-.site-nav__link[aria-current="page"]:hover {
-  background-color: rgba(52, 152, 219, 0.15);
 }
 
 @keyframes fadeIn {
