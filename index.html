@@ -1,262 +1,86 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
-  <title>Сервисы ТПУ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хаб 8К64</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; }
-    
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    
-    h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
-
-    /* Сетка сервисов */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .service-card {
-      display: block;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #eee;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .service-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    .service-card i { color: #3498db; margin-right: 10px; }
-    .service-card h3 { margin: 10px 0 5px 0; font-size: 16px; }
-    .service-card p { margin: 0; font-size: 13px; color: #777; }
-
-    /* Карточка "Мое расписание" (Локальное) */
-    .local-schedule-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      cursor: pointer;
-      border: 2px solid #3498db;
-      color: #3498db;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: all 0.2s;
-    }
-    .local-schedule-card:hover {
-      background: #3498db;
-      color: white;
-      transform: translateY(-2px);
-    }
-    .local-schedule-card .icon-box {
-      width: 40px;
-      height: 40px;
-      background: #eef2f7;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #3498db;
-      font-size: 18px;
-    }
-
-    /* Панель расписания (скрыта по умолчанию) */
-    #schedule-panel {
-      display: none;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      margin-top: 30px;
-      border: 1px solid #eee;
-    }
-    .schedule-header h2 { margin: 0 0 10px 0; color: #2c3e50; }
-    .schedule-header p { margin: 0; color: #7f8c8d; }
-
-    .days-container {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .day-btn {
-      padding: 10px 20px;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-      background: #fff;
-      cursor: pointer;
-      font-weight: 500;
-    }
-    .day-btn.active {
-      background: #3498db;
-      color: white;
-      border-color: #3498db;
-    }
-
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 15px;
-    }
-    .class-card {
-      background: #fafafa;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #eee;
-    }
-    .class-time { font-weight: bold; color: #3498db; }
-    .no-classes-msg {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 40px;
-      color: #95a5a6;
-      font-style: italic;
-    }
-  </style>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
+  <!-- <header class="site-header">
+    <div class="container">
+      <h1>Сервисы ТПУ</h1>
+    </div>
+  </header> -->
+  
+    <!-- Шапка сайта. Копия есть в index.html и schedule.html: меняешь одну — поменяй и вторую -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__logo" href="index.html">Хаб 8К64</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__link is-active" href="index.html" aria-current="page">Главная</a>
+        <a class="site-nav__link" href="schedule.html">Расписание</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container">
+    <section aria-labelledby="services-heading" class="services-section">
+      <h2 id="services-heading" class="section-title">Сервисы и инструменты</h2>
+      <div class="services-grid">
+        <a class="service-card" href="https://stud.lms.tpu.ru" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          <h3 class="service-card__title">LMS Moodle</h3>
+          <p class="service-card__text">Курсы, задания и материалы от преподавателей.</p>
+        </a>
+        <a class="service-card" href="https://lk.tpu.ru" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <h3 class="service-card__title">Личный кабинет</h3>
+          <p class="service-card__text">Данные, успеваемость, заявления и уведомления.</p>
+        </a>
+        <a class="service-card" href="https://mail.tpu.ru" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <h3 class="service-card__title">Корпоративная почта</h3>
+          <p class="service-card__text">Официальная почта ТПУ для связи.</p>
+        </a>
+        <a class="service-card" href="https://lib.tpu.ru" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-book" aria-hidden="true"></i>
+          <h3 class="service-card__title">Библиотека</h3>
+          <p class="service-card__text">Каталоги, статьи и фонды библиотеки ТПУ.</p>
+        </a>
+        <a class="service-card" href="https://staff.tpu.ru/personal" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-chalkboard-teacher" aria-hidden="true"></i>
+          <h3 class="service-card__title">Преподаватели</h3>
+          <p class="service-card__text">Контакты и публикации преподавателей.</p>
+        </a>
+        <a class="service-card" href="https://ro-rasp.tpu.ru" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-calendar-alt" aria-hidden="true"></i>
+          <h3 class="service-card__title">Расписание ТПУ</h3>
+          <p class="service-card__text">Перейти на внешний ресурс университета.</p>
+        </a>
+      </div>
+    </section>
+    <section aria-labelledby="schedule-heading" class="cta-section">
+      <h2 id="schedule-heading" class="section-title">Моё расписание</h2>
+      <a class="schedule-cta" href="schedule.html">
+        <i class="fa-solid fa-table-list" aria-hidden="true"></i>
+        <div class="schedule-cta__content">
+          <h3 class="schedule-cta__title">Моё расписание</h3>
+          <p class="schedule-cta__text">Просмотр и управление личным расписанием</p>
+        </div>
+      </a>
+    </section>
+  </main>
   <div class="container">
-    <h1>Сервисы ТПУ</h1>
-
-    <!-- Сетка старых сервисов + новая ссылка на расписание ТПУ -->
-    <div class="services-grid">
-      <a href="https://stud.lms.tpu.ru" target="_blank" class="service-card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>LMS Moodle</h3>
-        <p>Курсы, задания и материалы от преподавателей.</p>
-      </a>
-      <a href="https://lk.tpu.ru" target="_blank" class="service-card">
-        <i class="fas fa-user"></i>
-        <h3>Личный кабинет</h3>
-        <p>Данные, успеваемость, заявления и уведомления.</p>
-      </a>
-      <a href="https://mail.tpu.ru" target="_blank" class="service-card">
-        <i class="fas fa-envelope"></i>
-        <h3>Корпоративная почта</h3>
-        <p>Официальная почта ТПУ для связи.</p>
-      </a>
-      <a href="https://lib.tpu.ru" target="_blank" class="service-card">
-        <i class="fas fa-book"></i>
-        <h3>Библиотека</h3>
-        <p>Каталоги, статьи и фонды библиотеки ТПУ.</p>
-      </a>
-      <a href="https://staff.tpu.ru/personal" target="_blank" class="service-card">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <h3>Преподаватели</h3>
-        <p>Контакты и публикации преподавателей.</p>
-      </a>
-      <!-- НОВАЯ ССЫЛКА НА РАСПИСАНИЕ ТПУ -->
-      <a href="https://ro-rasp.tpu.ru" target="_blank" class="service-card">
-        <i class="fas fa-calendar-alt"></i>
-        <h3>Расписание ТПУ</h3>
-        <p>Перейти на внешний ресурс университета</p>
-      </a>
-    </div>
-
-    <!-- КНОПКА-КАРТОЧКА "Мое расписание" (Локальное) -->
-    <div class="local-schedule-card" onclick="toggleSchedule()">
-      <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
-      <div>
-        <h3 style="margin:0; font-size: 18px;">Мое расписание (Локальное)</h3>
-        <p style="margin:5px 0 0 0; font-size: 13px; color: #555;">Посмотреть расписание прямо здесь без перехода на сайт</p>
-      </div>
-    </div>
-
-    <!-- ПАНЕЛЬ РАСПИСАНИЯ (СКРЫТА) -->
-    <div id="schedule-panel">
-      <div class="schedule-header">
-        <h2>Расписание занятий</h2>
-        <p>Актуальное расписание для вашей группы.</p>
-      </div>
-
-      <div class="days-container">
-        <button class="day-btn active" onclick="showDay('mon')">Понедельник</button>
-        <button class="day-btn" onclick="showDay('tue')">Вторник</button>
-        <button class="day-btn" onclick="showDay('wed')">Среда</button>
-        <button class="day-btn" onclick="showDay('thu')">Четверг</button>
-        <button class="day-btn" onclick="showDay('fri')">Пятница</button>
-        <button class="day-btn" onclick="showDay('sat')">Суббота</button>
-      </div>
-
-      <div class="cards-container" id="cards-container">
-        <!-- Сюда JS вставит карточки пар -->
-      </div>
-    </div>
+    <p>&copy; 2026 ТПУ. Проект учебной практики.</p>
   </div>
+  </footer>
 
-  <script>
-    // Данные расписания (статичные)
-    const scheduleData = {
-      mon: [
-        { time: '08:30', subject: 'Высшая математика', type: 'lecture', teacher: 'Петров П.П.', location: 'ауд. 101' },
-        { time: '10:25', subject: 'Физика', type: 'practice', teacher: 'Сидоров С.С.', location: 'ауд. 205' }
-      ],
-      tue: [
-        { time: '12:10', subject: 'Информатика', type: 'lab', teacher: 'Иванов И.И.', location: 'лаб. 302' }
-      ],
-      wed: [], 
-      thu: [
-        { time: '08:30', subject: 'Химия', type: 'lecture', teacher: 'Кузнецова К.К.', location: 'ауд. 110' }
-      ],
-      fri: [],
-      sat: []
-    };
-
-    // Переключение видимости панели расписания
-    function toggleSchedule() {
-      const panel = document.getElementById('schedule-panel');
-      if (panel.style.display === 'block') {
-        panel.style.display = 'none';
-      } else {
-        panel.style.display = 'block';
-        showDay('mon'); // При открытии сразу показываем понедельник
-      }
-    }
-
-    // Отрисовка расписания для выбранного дня
-    function showDay(dayKey) {
-      const container = document.getElementById('cards-container');
-      const buttons = document.querySelectorAll('.day-btn');
-      
-      // Подсветка активной кнопки
-      buttons.forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const items = scheduleData[dayKey];
-      container.innerHTML = '';
-
-      if (!items || items.length === 0) {
-        container.innerHTML = '<div class="no-classes-msg">Нет занятий на этот день</div>';
-        return;
-      }
-
-      items.forEach(item => {
-        const typeLabel = item.type === 'lecture' ? 'Лекция' : 
-                           item.type === 'practice' ? 'Практика' : 'Лабораторная';
-        
-        const cardHTML = `
-          <div class="class-card">
-            <div class="class-time">${item.time}</div>
-            <div style="font-weight:bold;">${item.subject}</div>
-            <div style="font-size:0.85em; color:#777; margin-top:5px;">
-              ${typeLabel} | ${item.location}
-            </div>
-            <div style="font-size:0.8em; color:#999; margin-top:5px;">
-              Преподаватель: ${item.teacher}
-            </div>
-          </div>
-        `;
-        container.insertAdjacentHTML('beforeend', cardHTML);
-      });
-    }
-  </script>
 </body>
+
 </html>
