@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # обновлённые JSON (например, после перезапуска парсера) подхватываются без пересборки образа
+      - ./backend/data:/app/backend/data
