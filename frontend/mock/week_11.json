@@ -1,0 +1,474 @@
+{
+  "number": 11,
+  "start": "2026-11-09",
+  "end": "2026-11-14",
+  "parity": "odd",
+  "period": "second",
+  "subgroups_marked": true,
+  "rasp_url": "https://ro-rasp.tpu.ru/gruppa_45259/2026/11/view.html",
+  "days": [
+    {
+      "date": "2026-11-09",
+      "weekday": 1,
+      "lessons": [
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Информатика 1.2",
+          "type": "lab",
+          "teachers": [{ "name": "Воронина Н. М.", "url": "https://staff.tpu.ru/personal/employee?lid=56809"}],
+          "rooms": ["к. КЦ, ауд. 407А"],
+          "subgroup": 1,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
+        },
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "lab",
+          "teachers": [{ "name": "Филиппов Т. Е.", "url": "https://staff.tpu.ru/personal/employee?lid=570349"}],
+          "rooms": ["к. 19, ауд. 537"],
+          "subgroup": 2,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "ИЯ (английский)",
+          "type": "practice",
+          "teachers": [{ "name": "Аксёнова Н. В.", "url": null }],
+          "rooms": ["к. 10, ауд. 201/6"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Информатика 1.2",
+          "type": "lab",
+          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 411"],
+          "subgroup": 2,
+          "moodle_url": "https://tpu.ru"
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "История России",
+          "type": "lecture",
+          "teachers": [{ "name": "Рагозин Д. В.", "url": null }],
+          "rooms": ["к. ГК, ауд. 234"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "Русский язык (А)",
+          "type": "practice",
+          "teachers": [{ "name": "Салосина И. В.", "url": null }],
+          "rooms": ["к. 8, ауд. 335"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 5,
+          "start": "16:30",
+          "end": "18:05",
+          "discipline": "Элект.дисц.по ФКиС",
+          "type": "practice",
+          "teachers": [],
+          "rooms": [],
+          "subgroup": null,
+          "moodle_url": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "weekday": 2,
+      "lessons": [
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "practice",
+          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
+          "rooms": ["к. 19, ауд. 504"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "lecture",
+          "teachers": [{ "name": "Ефремова О. Н.", "url": null }],
+          "rooms": ["к. ГК, ауд. 234"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Информатика 1.2",
+          "type": "practice",
+          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 407А"],
+          "subgroup": null,
+          "moodle_url": "https://tpu.ru"
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "Русский язык (А)",
+          "type": "practice",
+          "teachers": [{ "name": "Салосина И. В.", "url": null }],
+          "rooms": ["к. 8, ауд. 333"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 5,
+          "start": "16:30",
+          "end": "18:05",
+          "discipline": "ИЯ (английский)",
+          "type": "practice",
+          "teachers": [{ "name": "Ростовцева В. М.", "url": null }],
+          "rooms": ["к. 8, ауд. 122"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 6,
+          "start": "18:25",
+          "end": "20:00",
+          "discipline": "ИЯ (А) (английский)",
+          "type": "practice",
+          "teachers": [{ "name": "Ростовцева В. М.", "url": null }],
+          "rooms": ["к. 8, ауд. 122"],
+          "subgroup": null,
+          "moodle_url": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "weekday": 3,
+      "lessons": [
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Мат.логик.т.алгоритм",
+          "type": "practice",
+          "teachers": [{ "name": "Шефер О. В.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 313"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Введ.практн.деятел.",
+          "type": "practice",
+          "teachers": [{ "name": "Понаморёва Ю. В.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 112"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "ИЯ (английский)",
+          "type": "practice",
+          "teachers": [
+            { "name": "Пичугова И. Л.", "url": null },
+            { "name": "Аксёнова Н. В.", "url": null },
+            { "name": "Ануфриева Т. Н.", "url": null }
+          ],
+          "rooms": [
+            "к. 10, ауд. 202",
+            "к. 10, ауд. 201/6",
+            "к. 10, ауд. 201/3"
+          ],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "ИЯ (английский)",
+          "type": "practice",
+          "teachers": [{ "name": "Аксёнова Н. В.", "url": null }],
+          "rooms": ["к. 10, ауд. 201/6"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "lab",
+          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
+          "rooms": ["к. 19, ауд. 537"],
+          "subgroup": 2,
+          "moodle_url": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "weekday": 4,
+      "lessons": [
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "lab",
+          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
+          "rooms": ["к. 19, ауд. 537"],
+          "subgroup": 1,
+          "moodle_url": null
+        },
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Введение в ИТ",
+          "type": "lab",
+          "teachers": [{ "name": "Мамонтов И. С.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 204"],
+          "subgroup": 2,
+          "moodle_url": null
+        },
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Информатика 1.2",
+          "type": "lab",
+          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 411"],
+          "subgroup": 2,
+          "moodle_url": null
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "lecture",
+          "teachers": [{ "name": "Ефремова О. Н.", "url": null }],
+          "rooms": ["к. ГК, ауд. 234"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Информатика 1.2",
+          "type": "lecture",
+          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
+          "rooms": ["к. ГК, ауд. 204"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "История России",
+          "type": "practice",
+          "teachers": [{ "name": "Рагозин Д. В.", "url": null }],
+          "rooms": ["к. 19, ауд. 143"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 5,
+          "start": "16:30",
+          "end": "18:05",
+          "discipline": "Элект.дисц.по ФКиС",
+          "type": "practice",
+          "teachers": [],
+          "rooms": [],
+          "subgroup": null,
+          "moodle_url": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "weekday": 5,
+      "lessons": [
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Математика 1.3 ИТ",
+          "type": "practice",
+          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
+          "rooms": ["к. 10, ауд. 421"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Код ТПУ",
+          "type": "practice",
+          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 313"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Введение в ИТ",
+          "type": "lab",
+          "teachers": [{ "name": "Мамонтов И. С.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 212"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "ИЯ (английский)",
+          "type": "practice",
+          "teachers": [
+            { "name": "Пичугова И. Л.", "url": "tpu.ru" },
+            { "name": "Аксёнова Н. В.", "url": null }
+          ],
+          "rooms": [
+            "к. 10, ауд. 202",
+            "к. 10, ауд. 201/6"
+          ],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 5,
+          "start": "16:30",
+          "end": "18:05",
+          "discipline": "ИЯ (английский)",
+          "type": "practice",
+          "teachers": [
+            { "name": "Ануфриева Т. Н.", "url": null },
+            { "name": "Ростовцева В. М.", "url": null }
+          ],
+          "rooms": [
+            "к. 10, ауд. 201/3",
+            "к. 8, ауд. 122"
+          ],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 6,
+          "start": "18:25",
+          "end": "20:00",
+          "discipline": "ИЯ (А) (английский)",
+          "type": "practice",
+          "teachers": [{ "name": "Ростовцева В. М.", "url": null }],
+          "rooms": ["к. 8, ауд. 122"],
+          "subgroup": null,
+          "moodle_url": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "weekday": 6,
+      "lessons": [
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Введение в ИТ",
+          "type": "lab",
+          "teachers": [{ "name": "Мамонтов И. С.", "url": null }],
+          "rooms": ["к. КЦ, ауд. 417"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Математика (А)",
+          "type": "practice",
+          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
+          "rooms": ["к. 8, ауд. 326"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Введение в ИТ",
+          "type": "lecture",
+          "teachers": [{ "name": "Мышко Е. А.", "url": null }],
+          "rooms": ["к. ГК, ауд. 234"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Ведущий программист \"АО Инфотекс\"",
+          "type": "lecture",
+          "teachers": [{ "name": "Бурлаков М. Д.", "url": null }],
+          "rooms": ["к. ГК, ауд. 234"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "Русский язык (А)",
+          "type": "practice",
+          "teachers": [{ "name": "Хоречко У. В.", "url": null }],
+          "rooms": ["к. 8, ауд. 333"],
+          "subgroup": null,
+          "moodle_url": null
+        },
+        {
+          "pair": 5,
+          "start": "16:30",
+          "end": "18:05",
+          "discipline": "Русский язык (А)",
+          "type": "practice",
+          "teachers": [{ "name": "Хоречко У. В.", "url": null }],
+          "rooms": ["к. 8, ауд. 333"],
+          "subgroup": null,
+          "moodle_url": null
+        }
+      ]
+    }
+  ]
+}
