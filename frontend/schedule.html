@@ -1,14 +1,94 @@
-/* Владелец: Frontend 2. Остальные правят только по договорённости. */
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Расписание - Хаб 8К64</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/schedule.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание — Хаб 8К64</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Расписание — скоро</h1>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__logo" href="index.html">Хаб 8К64</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__link" href="index.html">Главная</a>
+        <a class="site-nav__link is-active" href="schedule.html" aria-current="page">Расписание</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container schedule-main">
+    <section class="schedule-header">
+      <h1 class="week-info" id="week-info">Загрузка…</h1>
+      
+      <div class="week-nav">
+        <button type="button" class="btn btn--outline" disabled>← пред. неделя</button>
+        <button type="button" class="btn btn--primary" disabled>Сегодня</button>
+        <button type="button" class="btn btn--outline" disabled>след. неделя →</button>
+      </div>
+
+      <div class="subgroup-toggle" role="group" aria-label="Выбор подгруппы">
+        <button type="button" class="toggle-btn is-selected" disabled>Все</button>
+        <button type="button" class="toggle-btn" disabled>1</button>
+        <button type="button" class="toggle-btn" disabled>2</button>
+      </div>
+
+      <a id="ro-rasp-link" href="#" class="fallback-link" target="_blank" rel="noopener noreferrer">
+        Открыть эту неделю на ro-rasp <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </section>
+
+    <!-- Табы дней (видны только на мобильных) -->
+    <nav class="day-tabs" id="day-tabs" aria-label="Выбор дня недели"></nav>
+
+    <!-- Контейнер для недели (на десктопе превращается в сетку) -->
+    <div class="week" id="week-container">
+      <!-- Сюда JS добавит заголовки колонок для десктопа и сами дни -->
+    </div>
+
+    <!-- Состояния -->
+    <section class="schedule-state" id="state-loading">
+      <div class="state-card state-card--loading">
+        <i class="fa-solid fa-circle-notch fa-spin"></i>
+        <p>Загрузка расписания…</p>
+      </div>
+    </section>
+
+    <section class="schedule-state" id="state-error" hidden>
+      <div class="state-card state-card--error">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <p>Не удалось загрузить расписание</p>
+        <a id="error-ro-rasp-link" href="https://ro-rasp.tpu.ru/" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+          Открыть на ro-rasp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Шаблон карточки занятия -->
+  <template id="lesson-template">
+    <article class="lesson">
+      <div class="lesson__time"></div>
+      <h3 class="lesson__title"></h3>
+      <div class="lesson__badges">
+        <span class="badge badge--type" title=""></span>
+        <span class="badge badge--subgroup" hidden></span>
+      </div>
+      <ul class="lesson__teachers"></ul>
+      <ul class="lesson__rooms"></ul>
+      <div class="lesson__actions">
+        <a class="btn-action btn-action--moodle lesson__moodle" target="_blank" rel="noopener noreferrer" hidden>Moodle</a>
+        <button class="btn-action btn-action--note lesson__note-btn" type="button" aria-label="Заметка к паре">
+          <i class="fa-regular fa-note-sticky"></i>
+        </button>
+      </div>
+    </article>
+  </template>
+
+  <!-- Скрипты подключаются строго в этом порядке -->
+  <script src="js/config.js"></script>
+  <script src="js/schedule.js"></script>
 </body>
 </html>
