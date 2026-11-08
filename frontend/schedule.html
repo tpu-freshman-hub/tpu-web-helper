@@ -1,14 +1,263 @@
-/* Владелец: Frontend 2. Остальные правят только по договорённости. */
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Расписание - Хаб 8К64</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/schedule.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание — Хаб 8К64</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Расписание — скоро</h1>
+  <!-- Шапка сайта (из вашего контекста) -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__logo" href="index.html">Хаб 8К64</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__link" href="index.html">Главная</a>
+        <a class="site-nav__link is-active" href="schedule.html" aria-current="page">Расписание</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container schedule-main">
+    
+    <!-- 2. Шапка расписания -->
+    <section class="schedule-header">
+      <h1 class="week-info">Неделя 12 · чётная · 16–21 ноября</h1>
+      
+      <div class="week-nav">
+        <button type="button" class="btn btn--outline">← пред. неделя</button>
+        <button type="button" class="btn btn--primary">Сегодня</button>
+        <button type="button" class="btn btn--outline">след. неделя →</button>
+      </div>
+
+      <div class="subgroup-toggle" role="group" aria-label="Выбор подгруппы">
+        <button type="button" class="toggle-btn is-selected">Все</button>
+        <button type="button" class="toggle-btn">1</button>
+        <button type="button" class="toggle-btn">2</button>
+      </div>
+
+      <a href="https://ro-rasp.tpu.ru/gruppa_45259/2026/12/view.html" 
+         class="fallback-link" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        Открыть эту неделю на ro-rasp <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </section>
+
+    <!-- 3. Табы дней -->
+    <!-- Примечание: Пн выбран (is-selected), Вт помечен как сегодняшний (is-today) для демонстрации разных состояний -->
+    <nav class="day-tabs" aria-label="Выбор дня недели">
+      <button type="button" class="day-tab is-selected" aria-current="date">
+        <span class="day-tab__name">Пн</span>
+        <span class="day-tab__date">16.11</span>
+      </button>
+      <button type="button" class="day-tab is-today">
+        <span class="day-tab__name">Вт</span>
+        <span class="day-tab__date">17.11</span>
+      </button>
+      <button type="button" class="day-tab">
+        <span class="day-tab__name">Ср</span>
+        <span class="day-tab__date">18.11</span>
+      </button>
+      <button type="button" class="day-tab">
+        <span class="day-tab__name">Чт</span>
+        <span class="day-tab__date">19.11</span>
+      </button>
+      <button type="button" class="day-tab">
+        <span class="day-tab__name">Пт</span>
+        <span class="day-tab__date">20.11</span>
+      </button>
+      <button type="button" class="day-tab">
+        <span class="day-tab__name">Сб</span>
+        <span class="day-tab__date">21.11</span>
+      </button>
+    </nav>
+
+    <!-- 4. Список пар выбранного дня -->
+    <section class="schedule-list" id="schedule-main-content">
+      
+      <!-- 1 пара -->
+      <div class="slot" data-pair="1">
+        <article class="lesson lesson--lab">
+          <div class="lesson__time">1 пара · 8:30–10:05</div>
+          <h3 class="lesson__title">Информатика 1.2</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--lab" title="Лабораторная работа">ЛБ</span>
+          </div>
+          <ul class="lesson__teachers">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Воронина Н. М.</a></li>
+          </ul>
+          <ul class="lesson__rooms">
+            <li>к. КЦ, ауд. 407А</li>
+          </ul>
+          <div class="lesson__actions">
+            <a class="btn-action btn-action--moodle" href="#" target="_blank" rel="noopener noreferrer">Moodle</a>
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2 пара -->
+      <div class="slot" data-pair="2">
+        <article class="lesson lesson--practice">
+          <div class="lesson__time">2 пара · 10:25–12:00</div>
+          <h3 class="lesson__title">Математическая логика и теория алгоритмов</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--practice" title="Практика">ПР</span>
+          </div>
+          <ul class="lesson__teachers">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Шефер О. В.</a></li>
+          </ul>
+          <ul class="lesson__rooms">
+            <li>к. КЦ, ауд. 413</li>
+          </ul>
+          <div class="lesson__actions">
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 3 пара -->
+      <div class="slot" data-pair="3">
+        <article class="lesson lesson--lecture">
+          <div class="lesson__time">3 пара · 12:20–13:55</div>
+          <h3 class="lesson__title">История России</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--lecture" title="Лекция">ЛК</span>
+          </div>
+          <ul class="lesson__teachers">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Рагозин Д. В.</a></li>
+          </ul>
+          <ul class="lesson__rooms">
+            <li>к. ГК, ауд. 234</li>
+          </ul>
+          <div class="lesson__actions">
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 4 пара (Слот с двумя занятиями) -->
+      <div class="slot" data-pair="4">
+        <article class="lesson lesson--practice">
+          <div class="lesson__time">4 пара · 14:35–16:10</div>
+          <h3 class="lesson__title">Иностранный язык (английский)</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--practice" title="Практика">ПР</span>
+          </div>
+          <ul class="lesson__teachers">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Аксёнова Н. В.</a></li>
+          </ul>
+          <div class="lesson__actions">
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+
+        <article class="lesson lesson--lab">
+          <div class="lesson__time">4 пара · 14:35–16:10</div>
+          <h3 class="lesson__title">Информатика 1.2</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--lab" title="Лабораторная работа">ЛБ</span>
+            <span class="badge badge--subgroup">Подгр. 1</span>
+          </div>
+          <ul class="lesson__teachers">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Воронина Н. М.</a></li>
+          </ul>
+          <ul class="lesson__rooms">
+            <li>к. КЦ, ауд. 418</li>
+          </ul>
+          <div class="lesson__actions">
+            <a class="btn-action btn-action--moodle" href="#" target="_blank" rel="noopener noreferrer">Moodle</a>
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 5 пара (Без преподавателя и аудитории) -->
+      <div class="slot" data-pair="5">
+        <article class="lesson lesson--practice">
+          <div class="lesson__time">5 пара · 16:20–17:55</div>
+          <h3 class="lesson__title">Элективные дисциплины по физической культуре и спорту</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--practice" title="Практика">ПР</span>
+          </div>
+          <!-- Блоки teachers и rooms намеренно опущены -->
+          <div class="lesson__actions">
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Тестовая карточка для проверки списков (Среда, 3 пара) -->
+      <div class="slot" data-pair="3" data-test="wednesday">
+        <article class="lesson lesson--practice">
+          <div class="lesson__time">3 пара · 12:20–13:55</div>
+          <h3 class="lesson__title">Иностранный язык (английский)</h3>
+          <div class="lesson__badges">
+            <span class="badge badge--practice" title="Практика">ПР</span>
+          </div>
+          <ul class="lesson__teachers">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Пичугова И. Л.</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Аксёнова Н. В.</a></li>
+          </ul>
+          <ul class="lesson__rooms">
+            <li>к. 10, ауд. 202</li>
+            <li>к. 10, ауд. 201/6</li>
+          </ul>
+          <div class="lesson__actions">
+            <button class="btn-action btn-action--note" type="button" aria-label="Заметка к паре">
+              <i class="fa-regular fa-note-sticky"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- 5. Состояния (скрыты по умолчанию атрибутом hidden) -->
+    
+    <section class="schedule-state" hidden>
+      <div class="state-card state-card--loading">
+        <i class="fa-solid fa-circle-notch fa-spin"></i>
+        <p>Загрузка расписания…</p>
+      </div>
+    </section>
+
+    <section class="schedule-state" hidden>
+      <div class="state-card state-card--empty">
+        <i class="fa-regular fa-calendar-xmark"></i>
+        <p>Пар нет</p>
+        <span class="state-card__hint">Отдыхайте или проверьте другую дату</span>
+      </div>
+    </section>
+
+    <section class="schedule-state" hidden>
+      <div class="state-card state-card--error">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <p>Не удалось загрузить расписание</p>
+        <a href="https://ro-rasp.tpu.ru/gruppa_45259/2026/12/view.html" 
+           class="btn btn--primary" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          Открыть на ro-rasp
+        </a>
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
