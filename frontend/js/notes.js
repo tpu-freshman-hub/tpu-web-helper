@@ -2,8 +2,6 @@
 
 const NOTES_KEY = 'hub8k64:notes';
 
-/* ---------- Часть А: контракт ---------- */ 
-
 function getNote(key) {
   const notes = readNotes();
   return Object.prototype.hasOwnProperty.call(notes, key) ? notes[key] : null;
@@ -41,8 +39,6 @@ function noteKey(date, pair, discipline) {
   return [date, pair, discipline].join('|');
 }
 
-/* ---------- Часть Б: карточка ---------- */
-
 function renderNote(card) {
   const key = card.dataset.noteKey;
   if (!key) return;
@@ -64,7 +60,7 @@ function renderNote(card) {
 
   const btn = card.querySelector('.lesson__note-btn');
   if (text !== null) {
-    noteText.textContent = text;   // только textContent: пользовательский текст, никакого innerHTML
+    noteText.textContent = text;   
     noteText.hidden = false;
     if (btn) btn.classList.add('has-note');
   } else {
@@ -90,12 +86,10 @@ function attachNote(card, key) {
   });
 }
 
-/* ---------- Редактор ---------- */
-
 function createNoteButton(label, className) {
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.className = className + ' btn'; // .btn — общий класс кнопок из вёрстки; поправьте на свой
+  btn.className = className + ' btn';
   btn.textContent = label;
   return btn;
 }
