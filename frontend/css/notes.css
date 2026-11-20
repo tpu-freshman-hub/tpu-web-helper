@@ -1,0 +1,60 @@
+/* Текст заметки на карточке */
+.lesson__note-text {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-text, #1c1c1c);
+  background: var(--color-surface-muted, #f2f2f2);
+  border-radius: var(--radius-s, 8px);
+  white-space: pre-wrap;      /* сохраняем переносы строк */
+  overflow-wrap: anywhere;    /* 300 символов без пробелов не разъезжают карточку */
+}
+
+/* Кнопка заметки, когда заметка есть */
+.lesson__note-btn.has-note {
+  background: var(--color-primary, #ff5a00);
+  color: var(--color-on-primary, #ffffff);
+  border-color: transparent;
+}
+
+/* Редактор */
+.lesson__note-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.lesson__note-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 72px;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 16px;            /* меньше 16px — iPhone зумит страницу */
+  line-height: 1.4;
+  color: var(--color-text, #1c1c1c);
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #d0d0d0);
+  border-radius: var(--radius-s, 8px);
+  resize: vertical;
+}
+
+.lesson__note-buttons {
+  display: flex;
+  flex-wrap: wrap;            /* на узкой карточке (~140px) кнопки переносятся */
+  gap: 8px;
+}
+
+.lesson__note-buttons .btn,
+.lesson__note-buttons button {
+  flex: 1 1 auto;
+  min-height: 44px;           /* тач-цель по минимуму */
+}
+
+.lesson__note-error {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-danger, #c0392b);
+}
