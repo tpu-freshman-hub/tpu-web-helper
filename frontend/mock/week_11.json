@@ -17,8 +17,15 @@
           "end": "10:05",
           "discipline": "Информатика 1.2",
           "type": "lab",
-          "teachers": [{ "name": "Воронина Н. М.", "url": "https://staff.tpu.ru/personal/employee?lid=56809"}],
-          "rooms": ["к. КЦ, ауд. 407А"],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 407А"
+          ],
           "subgroup": 1,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
@@ -26,10 +33,17 @@
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "lab",
-          "teachers": [{ "name": "Филиппов Т. Е.", "url": "https://staff.tpu.ru/personal/employee?lid=570349"}],
-          "rooms": ["к. 19, ауд. 537"],
+          "teachers": [
+            {
+              "name": "Филиппов Т. Е.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=570349"
+            }
+          ],
+          "rooms": [
+            "к. 19, ауд. 537"
+          ],
           "subgroup": 2,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
@@ -37,10 +51,17 @@
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
-          "discipline": "ИЯ (английский)",
+          "discipline": "Иностранный язык (английский)",
           "type": "practice",
-          "teachers": [{ "name": "Аксёнова Н. В.", "url": null }],
-          "rooms": ["к. 10, ауд. 201/6"],
+          "teachers": [
+            {
+              "name": "Аксёнова Н. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=127787"
+            }
+          ],
+          "rooms": [
+            "к. 10, ауд. 201/6"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -50,10 +71,17 @@
           "end": "12:00",
           "discipline": "Информатика 1.2",
           "type": "lab",
-          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 411"],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 411"
+          ],
           "subgroup": 2,
-          "moodle_url": "https://tpu.ru"
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
           "pair": 3,
@@ -61,19 +89,33 @@
           "end": "14:15",
           "discipline": "История России",
           "type": "lecture",
-          "teachers": [{ "name": "Рагозин Д. В.", "url": null }],
-          "rooms": ["к. ГК, ауд. 234"],
+          "teachers": [
+            {
+              "name": "Рагозин Д. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=213372"
+            }
+          ],
+          "rooms": [
+            "к. ГК, ауд. 234"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=5407"
         },
         {
           "pair": 4,
           "start": "14:35",
           "end": "16:10",
-          "discipline": "Русский язык (А)",
+          "discipline": "Русский язык (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Салосина И. В.", "url": null }],
-          "rooms": ["к. 8, ауд. 335"],
+          "teachers": [
+            {
+              "name": "Салосина И. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=221062"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 335"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -81,7 +123,7 @@
           "pair": 5,
           "start": "16:30",
           "end": "18:05",
-          "discipline": "Элект.дисц.по ФКиС",
+          "discipline": "Элективные дисциплины по физической культуре и спорту",
           "type": "practice",
           "teachers": [],
           "rooms": [],
@@ -98,23 +140,37 @@
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "practice",
-          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
-          "rooms": ["к. 19, ауд. 504"],
+          "teachers": [
+            {
+              "name": "Филиппов Т. Е.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=570349"
+            }
+          ],
+          "rooms": [
+            "к. 19, ауд. 504"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
         {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "lecture",
-          "teachers": [{ "name": "Ефремова О. Н.", "url": null }],
-          "rooms": ["к. ГК, ауд. 234"],
+          "teachers": [
+            {
+              "name": "Ефремова О. Н.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=57572"
+            }
+          ],
+          "rooms": [
+            "к. ГК, ауд. 234"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
         {
           "pair": 3,
@@ -122,19 +178,33 @@
           "end": "14:15",
           "discipline": "Информатика 1.2",
           "type": "practice",
-          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 407А"],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 407А"
+          ],
           "subgroup": null,
-          "moodle_url": "https://tpu.ru"
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
           "pair": 4,
           "start": "14:35",
           "end": "16:10",
-          "discipline": "Русский язык (А)",
+          "discipline": "Русский язык (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Салосина И. В.", "url": null }],
-          "rooms": ["к. 8, ауд. 333"],
+          "teachers": [
+            {
+              "name": "Салосина И. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=221062"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 333"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -142,10 +212,17 @@
           "pair": 5,
           "start": "16:30",
           "end": "18:05",
-          "discipline": "ИЯ (английский)",
+          "discipline": "Иностранный язык (английский)",
           "type": "practice",
-          "teachers": [{ "name": "Ростовцева В. М.", "url": null }],
-          "rooms": ["к. 8, ауд. 122"],
+          "teachers": [
+            {
+              "name": "Ростовцева В. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=60529"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 122"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -153,10 +230,17 @@
           "pair": 6,
           "start": "18:25",
           "end": "20:00",
-          "discipline": "ИЯ (А) (английский)",
+          "discipline": "Английский язык (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Ростовцева В. М.", "url": null }],
-          "rooms": ["к. 8, ауд. 122"],
+          "teachers": [
+            {
+              "name": "Ростовцева В. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=60529"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 122"
+          ],
           "subgroup": null,
           "moodle_url": null
         }
@@ -170,21 +254,58 @@
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Мат.логик.т.алгоритм",
+          "discipline": "Математическая логика и теория алгоритмов",
           "type": "practice",
-          "teachers": [{ "name": "Шефер О. В.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 313"],
+          "teachers": [
+            {
+              "name": "Шефер О. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=128196"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 313"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6455"
         },
         {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
-          "discipline": "Введ.практн.деятел.",
+          "discipline": "Введение в проектную деятельность",
           "type": "practice",
-          "teachers": [{ "name": "Понаморёва Ю. В.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 112"],
+          "teachers": [
+            {
+              "name": "Понаморёва Ю. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=2537"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 112"
+          ],
+          "subgroup": null,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=4525"
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Иностранный язык (английский)",
+          "type": "practice",
+          "teachers": [
+            {
+              "name": "Пичугова И. Л.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=60097"
+            },
+            {
+              "name": "Аксёнова Н. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=127787"
+            }
+          ],
+          "rooms": [
+            "к. 10, ауд. 202",
+            "к. 10, ауд. 201/6"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -192,16 +313,15 @@
           "pair": 3,
           "start": "12:40",
           "end": "14:15",
-          "discipline": "ИЯ (английский)",
+          "discipline": "Иностранный язык (английский)",
           "type": "practice",
           "teachers": [
-            { "name": "Пичугова И. Л.", "url": null },
-            { "name": "Аксёнова Н. В.", "url": null },
-            { "name": "Ануфриева Т. Н.", "url": null }
+            {
+              "name": "Ануфриева Т. Н.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=57063"
+            }
           ],
           "rooms": [
-            "к. 10, ауд. 202",
-            "к. 10, ауд. 201/6",
             "к. 10, ауд. 201/3"
           ],
           "subgroup": null,
@@ -211,10 +331,17 @@
           "pair": 4,
           "start": "14:35",
           "end": "16:10",
-          "discipline": "ИЯ (английский)",
+          "discipline": "Иностранный язык (английский)",
           "type": "practice",
-          "teachers": [{ "name": "Аксёнова Н. В.", "url": null }],
-          "rooms": ["к. 10, ауд. 201/6"],
+          "teachers": [
+            {
+              "name": "Аксёнова Н. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=127787"
+            }
+          ],
+          "rooms": [
+            "к. 10, ауд. 201/6"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -222,12 +349,19 @@
           "pair": 4,
           "start": "14:35",
           "end": "16:10",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "lab",
-          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
-          "rooms": ["к. 19, ауд. 537"],
+          "teachers": [
+            {
+              "name": "Филиппов Т. Е.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=570349"
+            }
+          ],
+          "rooms": [
+            "к. 19, ауд. 537"
+          ],
           "subgroup": 2,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         }
       ]
     },
@@ -239,23 +373,37 @@
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "lab",
-          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
-          "rooms": ["к. 19, ауд. 537"],
+          "teachers": [
+            {
+              "name": "Филиппов Т. Е.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=570349"
+            }
+          ],
+          "rooms": [
+            "к. 19, ауд. 537"
+          ],
           "subgroup": 1,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
         {
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Введение в ИТ",
+          "discipline": "Введение в информационные технологии",
           "type": "lab",
-          "teachers": [{ "name": "Мамонтов И. С.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 204"],
+          "teachers": [
+            {
+              "name": "Мамонтов И. С.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=602489"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 204"
+          ],
           "subgroup": 2,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 1,
@@ -263,21 +411,35 @@
           "end": "10:05",
           "discipline": "Информатика 1.2",
           "type": "lab",
-          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 411"],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 411"
+          ],
           "subgroup": 2,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "lecture",
-          "teachers": [{ "name": "Ефремова О. Н.", "url": null }],
-          "rooms": ["к. ГК, ауд. 234"],
+          "teachers": [
+            {
+              "name": "Ефремова О. Н.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=57572"
+            }
+          ],
+          "rooms": [
+            "к. ГК, ауд. 234"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
         {
           "pair": 3,
@@ -285,10 +447,17 @@
           "end": "14:15",
           "discipline": "Информатика 1.2",
           "type": "lecture",
-          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
-          "rooms": ["к. ГК, ауд. 204"],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
+          "rooms": [
+            "к. ГК, ауд. 204"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
           "pair": 4,
@@ -296,16 +465,23 @@
           "end": "16:10",
           "discipline": "История России",
           "type": "practice",
-          "teachers": [{ "name": "Рагозин Д. В.", "url": null }],
-          "rooms": ["к. 19, ауд. 143"],
+          "teachers": [
+            {
+              "name": "Рагозин Д. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=213372"
+            }
+          ],
+          "rooms": [
+            "к. 19, ауд. 143"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=5407"
         },
         {
           "pair": 5,
           "start": "16:30",
           "end": "18:05",
-          "discipline": "Элект.дисц.по ФКиС",
+          "discipline": "Элективные дисциплины по физической культуре и спорту",
           "type": "practice",
           "teachers": [],
           "rooms": [],
@@ -322,21 +498,35 @@
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Математика 1.3 ИТ",
+          "discipline": "Математика 1.3 для ИТ",
           "type": "practice",
-          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
-          "rooms": ["к. 10, ауд. 421"],
+          "teachers": [
+            {
+              "name": "Филиппов Т. Е.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=570349"
+            }
+          ],
+          "rooms": [
+            "к. 10, ауд. 421"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
         {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
-          "discipline": "Код ТПУ",
+          "discipline": "\"Код ТПУ\"",
           "type": "practice",
-          "teachers": [{ "name": "Воронина Н. М.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 313"],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 313"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -344,22 +534,35 @@
           "pair": 3,
           "start": "12:40",
           "end": "14:15",
-          "discipline": "Введение в ИТ",
+          "discipline": "Введение в информационные технологии",
           "type": "lab",
-          "teachers": [{ "name": "Мамонтов И. С.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 212"],
+          "teachers": [
+            {
+              "name": "Мамонтов И. С.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=602489"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 212"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 4,
           "start": "14:35",
           "end": "16:10",
-          "discipline": "ИЯ (английский)",
+          "discipline": "Иностранный язык (английский)",
           "type": "practice",
           "teachers": [
-            { "name": "Пичугова И. Л.", "url": "tpu.ru" },
-            { "name": "Аксёнова Н. В.", "url": null }
+            {
+              "name": "Пичугова И. Л.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=60097"
+            },
+            {
+              "name": "Аксёнова Н. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=127787"
+            }
           ],
           "rooms": [
             "к. 10, ауд. 202",
@@ -372,11 +575,17 @@
           "pair": 5,
           "start": "16:30",
           "end": "18:05",
-          "discipline": "ИЯ (английский)",
+          "discipline": "Иностранный язык (английский)",
           "type": "practice",
           "teachers": [
-            { "name": "Ануфриева Т. Н.", "url": null },
-            { "name": "Ростовцева В. М.", "url": null }
+            {
+              "name": "Ануфриева Т. Н.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=57063"
+            },
+            {
+              "name": "Ростовцева В. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=60529"
+            }
           ],
           "rooms": [
             "к. 10, ауд. 201/3",
@@ -389,10 +598,17 @@
           "pair": 6,
           "start": "18:25",
           "end": "20:00",
-          "discipline": "ИЯ (А) (английский)",
+          "discipline": "Английский язык (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Ростовцева В. М.", "url": null }],
-          "rooms": ["к. 8, ауд. 122"],
+          "teachers": [
+            {
+              "name": "Ростовцева В. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=60529"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 122"
+          ],
           "subgroup": null,
           "moodle_url": null
         }
@@ -406,21 +622,35 @@
           "pair": 1,
           "start": "08:30",
           "end": "10:05",
-          "discipline": "Введение в ИТ",
+          "discipline": "Введение в информационные технологии",
           "type": "lab",
-          "teachers": [{ "name": "Мамонтов И. С.", "url": null }],
-          "rooms": ["к. КЦ, ауд. 417"],
+          "teachers": [
+            {
+              "name": "Мамонтов И. С.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=602489"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 417"
+          ],
           "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
-          "discipline": "Математика (А)",
+          "discipline": "Математика (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Филиппов Т. Е.", "url": null }],
-          "rooms": ["к. 8, ауд. 326"],
+          "teachers": [
+            {
+              "name": "Филиппов Т. Е.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=570349"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 326"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -428,32 +658,39 @@
           "pair": 3,
           "start": "12:40",
           "end": "14:15",
-          "discipline": "Введение в ИТ",
+          "discipline": "Введение в информационные технологии",
           "type": "lecture",
-          "teachers": [{ "name": "Мышко Е. А.", "url": null }],
-          "rooms": ["к. ГК, ауд. 234"],
+          "teachers": [
+            {
+              "name": "Мыцко Е. А.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=155418"
+            },
+            {
+              "name": "Бурлаков М. Д.",
+              "url": null
+            }
+          ],
+          "rooms": [
+            "к. ГК, ауд. 234"
+          ],
           "subgroup": null,
-          "moodle_url": null
-        },
-        {
-          "pair": 3,
-          "start": "12:40",
-          "end": "14:15",
-          "discipline": "Ведущий программист \"АО Инфотекс\"",
-          "type": "lecture",
-          "teachers": [{ "name": "Бурлаков М. Д.", "url": null }],
-          "rooms": ["к. ГК, ауд. 234"],
-          "subgroup": null,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 4,
           "start": "14:35",
           "end": "16:10",
-          "discipline": "Русский язык (А)",
+          "discipline": "Русский язык (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Хоречко У. В.", "url": null }],
-          "rooms": ["к. 8, ауд. 333"],
+          "teachers": [
+            {
+              "name": "Хоречко У. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=109786"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 333"
+          ],
           "subgroup": null,
           "moodle_url": null
         },
@@ -461,10 +698,17 @@
           "pair": 5,
           "start": "16:30",
           "end": "18:05",
-          "discipline": "Русский язык (А)",
+          "discipline": "Русский язык (адаптационный курс)",
           "type": "practice",
-          "teachers": [{ "name": "Хоречко У. В.", "url": null }],
-          "rooms": ["к. 8, ауд. 333"],
+          "teachers": [
+            {
+              "name": "Хоречко У. В.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=109786"
+            }
+          ],
+          "rooms": [
+            "к. 8, ауд. 333"
+          ],
           "subgroup": null,
           "moodle_url": null
         }
