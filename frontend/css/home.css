@@ -7,6 +7,7 @@
 
 .service-card {
   display: block;
+  min-height: 44px;
   padding: 20px;
   background-color: var(--color-surface);
   border-radius: var(--radius);
@@ -33,13 +34,16 @@
   margin: 10px 0 6px 0;
   font-size: 16px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .service-card__text {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .schedule-cta {
@@ -48,6 +52,7 @@
   gap: 16px;
   width: 100%;
   max-width: 800px;
+  min-height: 44px;
   padding: 28px;
   background-color: var(--color-surface);
   border-radius: var(--radius);
@@ -62,6 +67,10 @@
   color: var(--color-text-white);
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+}
+
+.schedule-cta:hover .schedule-cta__text {
+  color: rgba(255, 255, 255, 0.9); 
 }
 
 .schedule-cta i {
@@ -79,12 +88,15 @@
   margin: 0;
   font-size: 18px;
   font-weight: 700;
+  overflow-wrap: break-word;
 }
 
 .schedule-cta__text {
   margin: 6px 0 0 0;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .schedule-cta:not(:hover) .schedule-cta__text {

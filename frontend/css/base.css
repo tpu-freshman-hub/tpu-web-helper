@@ -17,6 +17,14 @@
 
     /* прочее */
     --radius-sm: 6px;
+
+    --radius: 12px;                 /* используется в карточках и шапке */
+    --color-surface: #ffffff;       /* фон карточек и шапки */
+    --color-text-white: #ffffff;    /* белый текст на синем фоне */
+    --shadow-sticky: 0 2px 10px rgba(0,0,0,0.05); /* тень шапки */
+    --shadow-hover: 0 8px 20px rgba(0,0,0,0.1);   /* тень при наведении */
+    --transition: all 0.2s ease;    /* плавность анимаций */
+    --font: system-ui, -apple-system, sans-serif; /* шрифт по умолчанию */
 }
 
 [hidden] { display: none !important; }
@@ -111,5 +119,17 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .site-header__inner {
+    gap: 10px; /* чтобы лого и меню не прилипали */
+  }
+  .site-header__logo {
+    font-size: 1.1rem; /* чуть уменьшим логотип */
+  }
+  .site-nav__link {
+    padding: 8px 10px; /* уменьшим отступы внутри ссылок */
+    font-size: 14px;
   }
 }
