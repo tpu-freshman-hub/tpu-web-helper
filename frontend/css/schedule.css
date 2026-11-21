@@ -286,7 +286,7 @@
 }
 
 .lesson__rooms li::before {
-  content: '📍 ';
+  content: '📌 ';
   margin-right: 4px;
 }
 
@@ -574,4 +574,22 @@
     padding: 0 10px;
     font-size: 0.8rem;
   }
+}
+/* Подсветка заголовка колонки */
+.day-header.is-today-header {
+  background-color: #eef2ff; /* Светло-синий фон */
+  color: #2563eb; /* Синий текст */
+  font-weight: bold;
+}
+
+/* Подсветка ячеек колонки */
+.day-cell.is-today-column {
+  background-color: #f8fafc; /* Очень светлый фон для всей колонки */
+  border-left: 1px solid #dbeafe;
+  border-right: 1px solid #dbeafe;
+}
+
+/* Опционально: более яркая подсветка самих карточек в сегодня */
+.day-cell.is-today-column .lesson {
+  border-left: 3px solid #3b82f6;
 }
