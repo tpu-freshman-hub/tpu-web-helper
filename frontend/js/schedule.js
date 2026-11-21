@@ -72,14 +72,17 @@ function createLessonCard(lesson) {
     teachersList.hidden = true;
   }
 
+  // --- ИЗМЕНЕНИЕ: Обработка аудиторий ---
   const roomsList = card.querySelector('.lesson__rooms');
-  if (lesson.rooms && lesson.rooms.length > 0) {
+  // Проверяем, есть ли массив rooms и не пустой ли он
+  if (lesson.rooms && Array.isArray(lesson.rooms) && lesson.rooms.length > 0) {
     lesson.rooms.forEach(r => {
       const li = document.createElement('li');
-      if (r.url) {
-        li.appendChild(createSafeLink(r.name, r.url));
+      // r может быть объектом или строкой, в данном JSON это строки
+      if (typeof r === 'object' && r.url) {
+         li.appendChild(createSafeLink(r.name, r.url));
       } else {
-        li.textContent = r.name;
+         li.textContent = r;
       }
       roomsList.appendChild(li);
     });
@@ -108,13 +111,15 @@ function updateLayoutMode() {
 
   if (isDesktopView()) {
     weekContainer.classList.add('is-desktop-grid');
-    document.querySelectorAll('.day').forEach(d => d.classList.remove('is-selected'));
+    // На десктопе скрываем активные классы мобильных табов, чтобы не мешали
+    document.querySelectorAll('.mobile-day').forEach(d => d.classList.remove('is-selected'));
   } else {
     weekContainer.classList.remove('is-desktop-grid');
+    // Возвращаем видимость выбранному дню на мобильном
     const activeTab = document.querySelector('.day-tab.is-selected');
     if (activeTab) {
       const date = activeTab.dataset.date;
-      const daySection = document.querySelector(`.day[data-date="${date}"]`);
+      const daySection = document.querySelector(`.mobile-day[data-date="${date}"]`);
       if (daySection) daySection.classList.add('is-selected');
     }
   }
@@ -154,6 +159,7 @@ async function initSchedule() {
   showLoading();
 
   try {
+    // Примечание: функции weeksUrl() и scheduleUrl() должны быть определены в config.js
     const weeksResponse = await fetch(weeksUrl());
     if (!weeksResponse.ok) throw new Error(`Ошибка загрузки недель: ${weeksResponse.status}`);
     const weeksData = await weeksResponse.json();
@@ -173,6 +179,7 @@ async function initSchedule() {
 
     const today = todayIso();
     let defaultDateToSelect = weekData.days[0]?.date;
+    let todayIndex = -1; // Индекс сегодняшнего дня для подсветки колонки
 
     // --- Создаём заголовки для десктопной сетки ---
     const headerRow = document.createElement('div');
@@ -183,15 +190,23 @@ async function initSchedule() {
     // --- Рендер табов и сбор данных для сетки ---
     const daysData = [];
     
-    weekData.days.forEach(day => {
+    weekData.days.forEach((day, index) => {
       const [y, m, d] = day.date.split('-').map(Number);
       const dateObj = new Date(y, m - 1, d);
       const dayName = DAYS_SHORT[dateObj.getDay()];
       const tabTextDate = `${d}.${m}`;
 
-      // Заголовок колонки
+      // Заголовок колонки (Десктоп)
       const headerCell = document.createElement('div');
       headerCell.className = 'grid-cell day-header';
+      
+      // --- ИЗМЕНЕНИЕ: Подсветка заголовка колонки сегодня ---
+      if (day.date === today) {
+        headerCell.classList.add('is-today-header');
+        todayIndex = index;
+        defaultDateToSelect = day.date;
+      }
+      
       headerCell.textContent = `${dayName} ${tabTextDate}`;
       headerRow.appendChild(headerCell);
 
@@ -202,6 +217,7 @@ async function initSchedule() {
       tabBtn.dataset.date = day.date;
       tabBtn.innerHTML = `<span class="day-tab__name">${dayName}</span><span class="day-tab__date">${tabTextDate}</span>`;
       
+      // --- ИЗМЕНЕНИЕ: Подсветка таба сегодня ---
       if (day.date === today) {
         tabBtn.classList.add('is-today');
         defaultDateToSelect = day.date;
@@ -257,7 +273,6 @@ async function initSchedule() {
     });
 
     // --- Создаём фиксированную сетку для десктопа ---
-    // Собираем все уникальные номера пар со всей недели
     const allPairs = new Set();
     daysData.forEach(day => {
       day.lessons.forEach(lesson => {
@@ -265,20 +280,17 @@ async function initSchedule() {
       });
     });
     
-    // Сортируем пары по номеру
     const sortedPairs = Array.from(allPairs).sort((a, b) => a - b);
 
-    // Создаём строку для каждой пары
     sortedPairs.forEach(pairNum => {
       const row = document.createElement('div');
       row.className = 'grid-row';
       row.dataset.pair = pairNum;
 
-      // Ячейка времени (первая колонка)
+      // Ячейка времени
       const timeCell = document.createElement('div');
       timeCell.className = 'grid-cell time-cell';
       
-      // Находим время для этой пары (берём из первого занятия с этим номером)
       let timeText = `${pairNum} пара`;
       for (const day of daysData) {
         const lesson = day.lessons.find(l => l.pair === pairNum);
@@ -291,15 +303,18 @@ async function initSchedule() {
       row.appendChild(timeCell);
 
       // Ячейки для каждого дня
-      daysData.forEach(day => {
+      daysData.forEach((day, colIndex) => {
         const cell = document.createElement('div');
         cell.className = 'grid-cell day-cell';
         
-        // Ищем занятия с этим номером пары в этот день
+        // --- ИЗМЕНЕНИЕ: Подсветка всей колонки сегодняшнего дня ---
+        if (colIndex === todayIndex) {
+           cell.classList.add('is-today-column');
+        }
+        
         const dayLessons = day.lessons.filter(l => l.pair === pairNum);
         
         if (dayLessons.length > 0) {
-          // Создаём слот для занятий
           const slot = document.createElement('div');
           slot.className = 'slot';
           slot.dataset.pair = pairNum;
@@ -310,7 +325,6 @@ async function initSchedule() {
           
           cell.appendChild(slot);
         }
-        // Если занятий нет, ячейка остаётся пустой
         
         row.appendChild(cell);
       });
@@ -320,6 +334,7 @@ async function initSchedule() {
 
     updateLayoutMode();
 
+    // Активация таба по умолчанию (если мы не на десктопе)
     if (!isDesktopView()) {
       const defaultTab = dayTabs.querySelector(`.day-tab[data-date="${defaultDateToSelect}"]`);
       const defaultDay = weekContainer.querySelector(`.mobile-day[data-date="${defaultDateToSelect}"]`);
