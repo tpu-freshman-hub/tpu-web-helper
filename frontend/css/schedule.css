@@ -1,1 +1,387 @@
 /* Владелец: Frontend 2. Остальные правят только по договорённости. */
+/* =========================================================
+   Переменные (фолбэки на случай, если их ещё нет в base.css)
+   ========================================================= */
+:root {
+  --color-lecture: #3b82f6;
+  --color-practice: #10b981;
+  --color-lab: #f59e0b;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+/* =========================================================
+   Общие утилиты
+   ========================================================= */
+.container {
+  width: 100%;
+  max-width: 600px; /* Ограничение для десктопа, на телефоне займёт 100% */
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* =========================================================
+   2. Шапка расписания
+   ========================================================= */
+.schedule-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+
+.week-info {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.week-nav {
+  display: flex;
+  gap: 8px;
+}
+
+/* Базовые стили кнопок (минимум 44x44px для пальца) */
+.btn, .toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.btn:active, .toggle-btn:active {
+  background-color: var(--color-bg);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.btn--primary:active {
+  background-color: var(--color-primary-hover);
+}
+
+.subgroup-toggle {
+  display: flex;
+  gap: 4px;
+  background-color: var(--color-bg);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.toggle-btn {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+}
+
+.toggle-btn.is-selected {
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-weight: 600;
+}
+
+.fallback-link {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 44px; /* Чтобы ссылку тоже было удобно нажать */
+}
+
+.fallback-link:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   3. Табы дней
+   ========================================================= */
+.day-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  /* На 360px 6 кнопок по flex: 1 поместятся без скролла */
+}
+
+.day-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 4px 2px;
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.day-tab__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.day-tab__date {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.day-tab.is-selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.day-tab.is-today:not(.is-selected) {
+  color: var(--color-primary);
+  font-weight: 700;
+  position: relative;
+}
+
+/* Точка под "сегодняшним" днём, если он не выбран */
+.day-tab.is-today:not(.is-selected) .day-tab__date::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  margin: 2px auto 0;
+}
+
+/* =========================================================
+   4. Карточки пар (Slots & Lessons)
+   ========================================================= */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Отступ между занятиями внутри одного слота */
+}
+
+.lesson {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  /* Цветная полоса слева */
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.lesson--lecture { border-left-color: var(--color-lecture); }
+.lesson--practice { border-left-color: var(--color-practice); }
+.lesson--lab { border-left-color: var(--color-lab); }
+
+.lesson__time {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.lesson__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  /* КРИТИЧЕСКИ ВАЖНО: перенос длинных слов без горизонтального скролла */
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+}
+
+.lesson__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge--lecture { background-color: #dbeafe; color: #1e40af; }
+.badge--practice { background-color: #d1fae5; color: #065f46; }
+.badge--lab { background-color: #fef3c7; color: #92400e; }
+
+/* Бейдж подгруппы: контурный, визуально отличается от типа занятия */
+.badge--subgroup {
+  background-color: transparent;
+  border: 1px solid var(--color-text-muted);
+  color: var(--color-text-muted);
+  text-transform: none;
+  font-weight: 500;
+}
+
+.lesson__teachers,
+.lesson__rooms {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.lesson__teachers li::before {
+  content: '👤 ';
+  margin-right: 4px;
+}
+
+.lesson__rooms li::before {
+  content: '📍 ';
+  margin-right: 4px;
+}
+
+.lesson__teachers a,
+.lesson__rooms a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-primary);
+}
+
+.lesson__teachers a:hover,
+.lesson__rooms a:hover {
+  border-bottom-style: solid;
+}
+
+.lesson__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px; /* Требование: не меньше 44x44px */
+  min-width: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.btn-action--moodle {
+  background-color: #f5f5f4;
+  color: #44403c;
+  border: 1px solid #e7e5e4;
+}
+
+.btn-action--moodle:hover {
+  background-color: #e7e5e4;
+}
+
+.btn-action--note {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0 12px;
+}
+
+.btn-action--note:hover {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* =========================================================
+   5. Состояния (Загрузка, Пусто, Ошибка)
+   ========================================================= */
+.schedule-state {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.state-card i {
+  font-size: 2.5rem;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.state-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.state-card__hint {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.state-card--error i {
+  color: #ef4444;
+}
+
+.state-card--loading i {
+  color: var(--color-primary);
+}
