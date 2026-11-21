@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Шапка сайта. Копия есть в index.html и schedule.html: меняешь одну — поменяй и вторую -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-header__logo" href="index.html">Хаб 8К64</a>
@@ -21,9 +20,15 @@
   </header>
 
   <main class="container">
-    <h1>Сервисы ТПУ</h1>
+    <section aria-labelledby="schedule-heading" class="cta-section">
+      <h2 id="schedule-heading" class="section-title">Моё расписание</h2>
+      <a class="schedule-cta" href="schedule.html">
+        <i class="fa-solid fa-table-list" aria-hidden="true"></i>
+        <p class="schedule-cta__text">Просмотр и управление личным расписанием</p>
+      </a>
+    </section>
     <section aria-labelledby="services-heading" class="services-section">
-      <h2 id="services-heading" class="section-title">Сервисы и инструменты</h2>
+      <h2 id="services-heading" class="section-title">Сервисы ТПУ</h2>
       <div class="services-grid">
         <a class="service-card" href="https://stud.lms.tpu.ru" target="_blank" rel="noopener noreferrer">
           <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
@@ -55,24 +60,23 @@
           <h3 class="service-card__title">Сотрудники ТПУ</h3>
           <p class="service-card__text">Контакты и публикации преподавателей.</p>
         </a>
+        <a class="service-card" href="https://maps.tpu.ru" target="_blank" rel="noopener noreferrer">
+          <i class="fa-map-location-dot" aria-hidden="true"></i>
+          <h3 class="service-card__title">Сотрудники ТПУ</h3>
+          <p class="service-card__text">Контакты и публикации преподавателей.</p>
+        </a>
+        <a class="service-card" href="https://rasp.tpu.ru/kalendarnyj-grafik.html" target="_blank" rel="noopener noreferrer">
+          <i class="fa-calendar-days" aria-hidden="true"></i>
+          <h3 class="service-card__title">Сотрудники ТПУ</h3>
+          <p class="service-card__text">Контакты и публикации преподавателей.</p>
+        </a>
       </div>
-    </section>
-
-    <section aria-labelledby="schedule-heading" class="cta-section">
-      <h2 id="schedule-heading" class="section-title">Моё расписание</h2>
-      <a class="schedule-cta" href="schedule.html">
-        <i class="fa-solid fa-table-list" aria-hidden="true"></i>
-        <div class="schedule-cta__content">
-          <h3 class="schedule-cta__title">Моё расписание</h3>
-          <p class="schedule-cta__text">Просмотр и управление личным расписанием</p>
-        </div>
-      </a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 ТПУ. Проект учебной практики.</p>
+      <p>&copy; Учебный проект студентов группы 8К64. Не является официальным сайтом ТПУ.</p>
     </div>
   </footer>
 </body>
