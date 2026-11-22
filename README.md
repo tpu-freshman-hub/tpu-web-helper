@@ -205,10 +205,13 @@ git commit -m "Разрешены конфликты с main"
 | Проверка | Команда для запуска |
 | :--- | :--- |
 | **Линтер (Ruff)** | `ruff check backend` |
+| **Синтаксис Python** | `python -m compileall -q backend` |
 | **Проверка JSON** | `python -m json.tool frontend/mock/week_12.json > /dev/null` *(или ваша команда из `ci.yml`)* |
-| **Тесты (Pytest)** | `pytest` |
+| **Тесты (Pytest)** | `python -m pytest backend/tests` |
+| **Сборка образа (Docker)** | `docker build -t hub8k64 .` |
 
-> **Примечание:** Для запуска линтера и тестов должны быть установлены зависимости для разработки: `pip install -r requirements-dev.txt`.
+> **Примечание:** Для запуска линтера и тестов должны быть установлены зависимости для разработки: `pip install -r backend/requirements-dev.txt`. Для проверки сборки должен быть запущен Docker.
+
 
 ## Запуск проекта
 

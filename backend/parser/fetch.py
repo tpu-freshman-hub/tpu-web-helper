@@ -1,3 +1,4 @@
+import time
 from pathlib import Path
 
 import requests
@@ -21,8 +22,9 @@ def main() -> None:
             size_kb = len(html.encode("utf-8")) / 1024
             print(f"Неделя {week}: OK, {size_kb:.0f} КБ")
             ok += 1
-        except (requests.RequestException, OSError) as error:
+        except (requests.RequestException, OSError, AttributeError, KeyError, ValueError) as error:
             print(f"Неделя {week}: ОШИБКА — {error}")
+            time.sleep(1)
 
     print(f"Скачано {ok} из {len(WEEKS)} недель.")
 
