@@ -499,18 +499,23 @@
           "subgroup": null,
           "moodle_url": null
         },
-        {
-          "pair": 3,
-          "start": "12:40",
-          "end": "14:15",
-          "discipline": "Введение в информационные технологии",
+                {
+          "pair": 2,
+          "start": "10:25",
+          "end": "12:00",
+          "discipline": "Информатика 1.2",
           "type": "lab",
-          "teachers": [],
+          "teachers": [
+            {
+              "name": "Воронина Н. М.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
+            }
+          ],
           "rooms": [
-            "к. КЦ, ауд. 203"
+            "к. КЦ, ауд. 417"
           ],
           "subgroup": 1,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
+          "moodle_url": null
         },
         {
           "pair": 4,
