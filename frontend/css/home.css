@@ -17,11 +17,11 @@
   transition: var(--transition, all 0.2s ease);
 }
 
-.service-card:hover {
+/* .service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
   border-color: var(--color-accent);
-}
+} */
 
 .service-card i {
   color: var(--color-accent);
@@ -112,4 +112,11 @@
 }
 .cta-section {
   margin-bottom: 48px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-accent);
+  }
 }

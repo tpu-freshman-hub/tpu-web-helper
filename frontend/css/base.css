@@ -31,7 +31,6 @@
 
 [hidden] { display: none !important; }
 
-
 * {
   box-sizing: border-box;
 }
@@ -53,7 +52,11 @@ body {
 .section-title {
   color: var(--color-text);
   margin-top: 0;
+  margin-top: 32px;
   margin-bottom: 24px;
+  font-size: 24px; /* Размер как у стандартного h2 */
+  font-weight: 700; /* Жирность как у h2 */
+  line-height: 1.2;
 }
 
 /* Стили шапки */
@@ -68,7 +71,6 @@ body {
 
 .site-header__inner {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   min-height: 56px;
@@ -126,19 +128,20 @@ body {
 }
 @media (max-width: 480px) {
   .site-header__inner {
-    gap: 8px;
+    gap: 4px;
   }
   .site-header__logo {
-    font-size: 1rem; 
+    font-size: 0.9rem; 
+    white-space: nowrap;
   }
   .site-nav {
-    gap: 4px;
-    width: 100%;
-    justify-content: space-between;
+    gap: 2px;
+    width: auto;
   }
   .site-nav__link {
-    padding: 8px 10px;
+    padding: 6px 8px;
     font-size: 14px;
-    flex: 1;
+    min-width: 44px;
+    white-space: nowrap;
   }
 }
