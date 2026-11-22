@@ -63,6 +63,6 @@
 
 .lesson__note-error {
   margin: 0;
-  font-size: 0.8125rem;
+  font-size: 14px;
   color: var(--color-danger);
 }
