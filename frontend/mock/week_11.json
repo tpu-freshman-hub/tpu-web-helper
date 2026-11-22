@@ -80,7 +80,7 @@
           "rooms": [
             "к. КЦ, ауд. 411"
           ],
-          "subgroup": 2,
+          "subgroup": 3,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
@@ -360,7 +360,7 @@
           "rooms": [
             "к. 19, ауд. 537"
           ],
-          "subgroup": 2,
+          "subgroup": 1,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         }
       ]
@@ -384,7 +384,7 @@
           "rooms": [
             "к. 19, ауд. 537"
           ],
-          "subgroup": 1,
+          "subgroup": 3,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=2122"
         },
         {
@@ -402,7 +402,7 @@
           "rooms": [
             "к. КЦ, ауд. 204"
           ],
-          "subgroup": 2,
+          "subgroup": 1,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
@@ -545,7 +545,7 @@
           "rooms": [
             "к. КЦ, ауд. 212"
           ],
-          "subgroup": null,
+          "subgroup": 2,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
@@ -633,7 +633,7 @@
           "rooms": [
             "к. КЦ, ауд. 417"
           ],
-          "subgroup": null,
+          "subgroup": 3,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {

@@ -12,24 +12,6 @@
       "weekday": 1,
       "lessons": [
         {
-          "pair": 1,
-          "start": "08:30",
-          "end": "10:05",
-          "discipline": "Информатика 1.2",
-          "type": "lab",
-          "teachers": [
-            {
-              "name": "Воронина Н. М.",
-              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
-            }
-          ],
-          "rooms": [
-            "к. КЦ, ауд. 407А"
-          ],
-          "subgroup": 1,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
-        },
-        {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
@@ -98,7 +80,7 @@
           "rooms": [
             "к. КЦ, ауд. 418"
           ],
-          "subgroup": 1,
+          "subgroup": 3,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
@@ -169,8 +151,26 @@
           "rooms": [
             "к. КЦ, ауд. 407А"
           ],
-          "subgroup": 1,
+          "subgroup": 2,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
+        },
+        {
+          "pair": 3,
+          "start": "12:40",
+          "end": "14:15",
+          "discipline": "Введение в информационные технологии",
+          "type": "lab",
+          "teachers": [
+            {
+              "name": "Хамухин А. А.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=61741"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 411"
+          ],
+          "subgroup": 1,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 4,
@@ -205,7 +205,7 @@
           "rooms": [
             "к. КЦ, ауд. 407А"
           ],
-          "subgroup": 1,
+          "subgroup": 2,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=4726"
         },
         {
@@ -383,7 +383,7 @@
           "rooms": [
             "к. КЦ, ауд. 421"
           ],
-          "subgroup": 1,
+          "subgroup": 3,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         }
       ]
@@ -409,6 +409,24 @@
           ],
           "subgroup": null,
           "moodle_url": null
+        },
+        {
+          "pair": 1,
+          "start": "08:30",
+          "end": "10:05",
+          "discipline": "Введение в информационные технологии",
+          "type": "lab",
+          "teachers": [
+            {
+              "name": "Хамухин А. А.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=61741"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 105"
+          ],
+          "subgroup": 2,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 2,
@@ -445,6 +463,24 @@
           ],
           "subgroup": null,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=5407"
+        },
+        {
+          "pair": 4,
+          "start": "14:35",
+          "end": "16:10",
+          "discipline": "Введение в информационные технологии",
+          "type": "lab",
+          "teachers": [
+            {
+              "name": "Хамухин А. А.",
+              "url": "https://staff.tpu.ru/personal/employee?lid=61741"
+            }
+          ],
+          "rooms": [
+            "к. КЦ, ауд. 421"
+          ],
+          "subgroup": 3,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 5,
@@ -515,7 +551,7 @@
             "к. КЦ, ауд. 417"
           ],
           "subgroup": 1,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
           "pair": 4,
@@ -626,42 +662,6 @@
       "date": "2026-11-21",
       "weekday": 6,
       "lessons": [
-        {
-          "pair": 1,
-          "start": "08:30",
-          "end": "10:05",
-          "discipline": "Информатика 1.2",
-          "type": "lab",
-          "teachers": [
-            {
-              "name": "Воронина Н. М.",
-              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
-            }
-          ],
-          "rooms": [
-            "к. КЦ, ауд. 411"
-          ],
-          "subgroup": 1,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
-        },
-        {
-          "pair": 2,
-          "start": "10:25",
-          "end": "12:00",
-          "discipline": "Информатика 1.2",
-          "type": "lab",
-          "teachers": [
-            {
-              "name": "Воронина Н. М.",
-              "url": "https://staff.tpu.ru/personal/employee?lid=56809"
-            }
-          ],
-          "rooms": [
-            "к. КЦ, ауд. 411"
-          ],
-          "subgroup": 2,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
-        },
         {
           "pair": 3,
           "start": "12:40",
