@@ -4,18 +4,24 @@
   padding: 8px 10px;
   font-size: 0.875rem;
   line-height: 1.4;
-  color: var(--color-text, #1c1c1c);
-  background: var(--color-surface-muted, #f2f2f2);
-  border-radius: var(--radius-s, 8px);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
   white-space: pre-wrap;      /* сохраняем переносы строк */
   overflow-wrap: anywhere;    /* 300 символов без пробелов не разъезжают карточку */
 }
 
 /* Кнопка заметки, когда заметка есть */
 .lesson__note-btn.has-note {
-  background: var(--color-primary, #ff5a00);
-  color: var(--color-on-primary, #ffffff);
-  border-color: transparent;
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  border-color: var(--color-accent);
+}
+.lesson__note-btn {
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
 }
 
 /* Редактор */
@@ -24,6 +30,8 @@
   flex-direction: column;
   gap: 8px;
   margin-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .lesson__note-input {
@@ -34,10 +42,10 @@
   font-family: inherit;
   font-size: 16px;            /* меньше 16px — iPhone зумит страницу */
   line-height: 1.4;
-  color: var(--color-text, #1c1c1c);
-  background: var(--color-surface, #ffffff);
-  border: 1px solid var(--color-border, #d0d0d0);
-  border-radius: var(--radius-s, 8px);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   resize: vertical;
 }
 
@@ -47,14 +55,14 @@
   gap: 8px;
 }
 
-.lesson__note-buttons .btn,
 .lesson__note-buttons button {
-  flex: 1 1 auto;
-  min-height: 44px;           /* тач-цель по минимуму */
+  flex: 1 1 80px;
+  min-height: 44px; 
+  font-size: 0.875rem;
 }
 
 .lesson__note-error {
   margin: 0;
   font-size: 0.8125rem;
-  color: var(--color-danger, #c0392b);
+  color: var(--color-danger);
 }

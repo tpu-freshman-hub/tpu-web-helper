@@ -18,6 +18,8 @@
     /* прочее */
     --radius-sm: 6px;
 
+    --color-danger: #ef4444;
+
     --radius: 12px;                 /* используется в карточках и шапке */
     --color-surface: #ffffff;       /* фон карточек и шапки */
     --color-text-white: #ffffff;    /* белый текст на синем фоне */
