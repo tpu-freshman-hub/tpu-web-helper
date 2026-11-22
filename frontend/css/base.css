@@ -1,33 +1,22 @@
 :root {
-    /* фон и текст */
-    --color-bg: #f8fafc;
-    --color-text: #0f172a;
-    --color-text-muted: #475569;   /* не #64748b: 4,40 < 4,5 на светлом фоне */
-    --color-border: #e2e8f0;
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-text: #333333;
+  --color-text-muted: #777777;
+  --color-accent: #3498db;
+  --color-border: #eeeeee;
+  --color-text-white: #ffffff;
 
-    /* основной цвет: одно значение, два имени */
-    --color-primary: #2563eb;
-    --color-accent: var(--color-primary);
-    --color-primary-hover: #1d4ed8;
+  --radius: 12px;
+  --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --shadow-sticky: 0 2px 10px rgba(0, 0, 0, 0.08);
 
-    /* типы занятий */
-    --color-lecture: #3b82f6;
-    --color-practice: #10b981;
-    --color-lab: #f59e0b;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    /* прочее */
-    --radius-sm: 6px;
-
-    --radius: 12px;                 /* используется в карточках и шапке */
-    --color-surface: #ffffff;       /* фон карточек и шапки */
-    --color-text-white: #ffffff;    /* белый текст на синем фоне */
-    --shadow-sticky: 0 2px 10px rgba(0,0,0,0.05); /* тень шапки */
-    --shadow-hover: 0 8px 20px rgba(0,0,0,0.1);   /* тень при наведении */
-    --transition: 0.2s ease;    /* плавность анимаций */
-    --font: system-ui, -apple-system, sans-serif; /* шрифт по умолчанию */
+  --color-lecture: #5ab8f6;
+  --color-practice: #e6da3b;
+  --color-lab: #12e18b;
 }
-
-[hidden] { display: none !important; }
 
 * {
   box-sizing: border-box;
@@ -50,11 +39,7 @@ body {
 .section-title {
   color: var(--color-text);
   margin-top: 0;
-  margin-top: 32px;
   margin-bottom: 24px;
-  font-size: 24px; /* Размер как у стандартного h2 */
-  font-weight: 700; /* Жирность как у h2 */
-  line-height: 1.2;
 }
 
 /* Стили шапки */
@@ -96,7 +81,7 @@ body {
   color: var(--color-text);
   text-decoration: none;
   border-radius: var(--radius);
-  transition: var(--transition, 0.2s ease);
+  transition: var(--transition, all 0.2s ease);
 }
 
 .site-nav__link:hover {
@@ -122,24 +107,5 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media (max-width: 480px) {
-  .site-header__inner {
-    gap: 4px;
-  }
-  .site-header__logo {
-    font-size: 0.9rem; 
-    white-space: nowrap;
-  }
-  .site-nav {
-    gap: 2px;
-    width: auto;
-  }
-  .site-nav__link {
-    padding: 6px 8px;
-    font-size: 14px;
-    min-width: 44px;
-    white-space: nowrap;
   }
 }
