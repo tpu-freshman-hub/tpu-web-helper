@@ -262,11 +262,27 @@ docker compose down
 
 После запуска сервер будет доступен по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-///Back-end 
-## Как скачать расписание с ro-rasp
+## Как обновить расписание
 
-Из корня репозитория, с активированным `.venv`:
+Сервер сам на ro-rasp не ходит: он читает готовый файл `backend/data/schedule.json`, который лежит в git. Когда расписание на ro-rasp поменялось, файл пересобирается так (из корня репозитория, с активированным `.venv`):
 
-    python -m backend.parser.fetch
+```bash
+python -m backend.parser.fetch     # скачать все 18 недель в backend/data/raw/ (в git не попадают)
+python -m backend.parser.parse     # собрать backend/data/schedule.json
+git diff --stat                    # посмотреть, что изменилось
+```
 
-Файлы сохраняются в `backend/data/raw/` (в git не попадают).
+Дальше обычный PR с обновлённым `schedule.json`. Руками этот файл не правим: если в нём ошибка, исправляется парсер и файл собирается заново.
+
+То же через Docker:
+
+```bash
+docker compose run --rm web python -m backend.parser.fetch
+docker compose run --rm web python -m backend.parser.parse
+```
+
+Полезно знать:
+- `python -m backend.parser.parse 12` печатает одну неделю и ничего не записывает — удобно, чтобы сверить её с ro-rasp.
+- Если `fetch` не скачал какую-то неделю (ro-rasp иногда не отвечает за 30 секунд), `parse` остановится с сообщением «Нет файла week_NN.html» и старый `schedule.json` не тронет. Запустите `fetch` ещё раз.
+- В конце `parse` печатает преподавателей и предметы, которых нет в `teachers.json` и `disciplines.json`: туда стоит дописать ссылки.
+- Как устроена разметка страниц ro-rasp — в [`backend/parser/PARSER_NOTES.md`](backend/parser/PARSER_NOTES.md).
