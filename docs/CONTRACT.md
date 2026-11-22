@@ -33,12 +33,13 @@
 {
   "current": 12,
   "weeks": [
+    { "number": 10, "start": "2026-11-02", "end": "2026-11-07", "parity": "even", "period": "second" },
     { "number": 11, "start": "2026-11-09", "end": "2026-11-14", "parity": "odd", "period": "second" },
     { "number": 12, "start": "2026-11-16", "end": "2026-11-21", "parity": "even", "period": "second" }
   ]
 }
 ```
-
+**Примечание:** файл `week_10.json` содержит синтетические данные, а ссылки в моках формируются на основе справочников из директории `backend/data/`.
 ### 2. Одна неделя целиком
 **Запрос:** `GET /api/schedule?week=12`  
 **Файл мока:** `frontend/mock/week_12.json`
