@@ -170,7 +170,7 @@
             "к. КЦ, ауд. 411"
           ],
           "subgroup": 1,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 4,
@@ -415,7 +415,7 @@
           "start": "08:30",
           "end": "10:05",
           "discipline": "Введение в информационные технологии",
-          "type": "practice",
+          "type": "lab",
           "teachers": [
             {
               "name": "Хамухин А. А.",
@@ -426,7 +426,7 @@
             "к. КЦ, ауд. 105"
           ],
           "subgroup": 2,
-          "moodle_url": null
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 2,
@@ -480,7 +480,7 @@
             "к. КЦ, ауд. 421"
           ],
           "subgroup": 3,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=5407"
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 5,
@@ -535,7 +535,7 @@
           "subgroup": null,
           "moodle_url": null
         },
-        {
+                {
           "pair": 2,
           "start": "10:25",
           "end": "12:00",
@@ -551,20 +551,7 @@
             "к. КЦ, ауд. 417"
           ],
           "subgroup": 1,
-          "moodle_url": null
-        },
-        {
-          "pair": 3,
-          "start": "12:40",
-          "end": "14:15",
-          "discipline": "Введение в информационные технологии",
-          "type": "lab",
-          "teachers": [],
-          "rooms": [
-            "к. КЦ, ауд. 203"
-          ],
-          "subgroup": 1,
-          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6312"
         },
         {
           "pair": 4,
@@ -617,8 +604,21 @@
           "rooms": [
             "к. КЦ, ауд. 407"
           ],
-          "subgroup": 3,
+          "subgroup": 1,
           "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=4726"
+        },
+        {
+          "pair": 5,
+          "start": "16:30",
+          "end": "18:05",
+          "discipline": "Введение в информационные технологии",
+          "type": "lab",
+          "teachers": [],
+          "rooms": [
+            "к. КЦ, ауд. 418"
+          ],
+          "subgroup": 2,
+          "moodle_url": "https://stud.lms.tpu.ru/course/view.php?id=6253"
         },
         {
           "pair": 5,

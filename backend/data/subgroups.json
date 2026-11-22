@@ -15,6 +15,7 @@
     { "parity": "even", "weekday": 2, "pair": 3, "discipline": "Информатика 1.2",       "type": "lab", "subgroup": 2 },
     { "parity": "even", "weekday": 2, "pair": 4, "discipline": "Основы программирования на Python",    "type": "lab", "subgroup": 1 },
     { "parity": "even", "weekday": 2, "pair": 5, "discipline": "Основы программирования на Python",    "type": "lab", "subgroup": 2 },
+    { "parity": "even", "weekday": 3, "pair": 5, "discipline": "Информатика 1.2",       "type": "lab", "subgroup": 3 },
     { "parity": "even", "weekday": 4, "pair": 1, "discipline": "Введение в информационные технологии", "type": "lab", "subgroup": 2 },
     { "parity": "even", "weekday": 4, "pair": 4, "discipline": "Введение в информационные технологии", "type": "lab", "subgroup": 3 },
     { "parity": "even", "weekday": 5, "pair": 2, "discipline": "Информатика 1.2",       "type": "lab", "subgroup": 1 },
