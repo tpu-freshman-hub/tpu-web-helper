@@ -35,7 +35,7 @@ function createSafeLink(text, url) {
   return a;
 }
 
-function createLessonCard(lesson) {
+function createLessonCard(lesson, date) {
   const template = document.querySelector('#lesson-template');
   const card = template.content.firstElementChild.cloneNode(true);
 
@@ -97,6 +97,8 @@ function createLessonCard(lesson) {
   } else {
     moodleBtn.hidden = true;
   }
+
+  attachNote(card, noteKey(date, lesson.pair, lesson.discipline));
 
   return card;
 }
@@ -268,7 +270,7 @@ async function initSchedule() {
             currentSlot.dataset.pair = currentPair;
             mobileDay.appendChild(currentSlot);
           }
-          currentSlot.appendChild(createLessonCard(lesson));
+          currentSlot.appendChild(createLessonCard(lesson, day.date));
         });
       }
 
@@ -323,7 +325,7 @@ async function initSchedule() {
           slot.dataset.pair = pairNum;
 
           dayLessons.forEach(lesson => {
-            slot.appendChild(createLessonCard(lesson));
+            slot.appendChild(createLessonCard(lesson, day.date));
           });
 
           cell.appendChild(slot);
