@@ -33,10 +33,12 @@
       </div>
 
       <div class="subgroup-toggle" role="group" aria-label="Выбор подгруппы">
-        <button type="button" class="toggle-btn is-selected">Все</button>
-        <button type="button" class="toggle-btn">1</button>
-        <button type="button" class="toggle-btn">2</button>
+        <button type="button" class="toggle-btn is-selected" data-subgroup="all" aria-pressed="true">Все</button>
+        <button type="button" class="toggle-btn" data-subgroup="1" aria-pressed="false">1</button>
+        <button type="button" class="toggle-btn" data-subgroup="2" aria-pressed="false">2</button>
+        <button type="button" class="toggle-btn" data-subgroup="3" aria-pressed="false">3</button>
       </div>
+      <p class="subgroup-hint" id="subgroup-hint" hidden>На этой неделе подгруппы не отмечены — показаны все пары</p>
 
       <a href="https://ro-rasp.tpu.ru/gruppa_45259/2026/12/view.html" 
          class="fallback-link" 
