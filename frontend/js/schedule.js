@@ -72,13 +72,11 @@ function createLessonCard(lesson) {
     teachersList.hidden = true;
   }
 
-  // --- ИЗМЕНЕНИЕ: Обработка аудиторий ---
+  // --- Обработка аудиторий ---
   const roomsList = card.querySelector('.lesson__rooms');
-  // Проверяем, есть ли массив rooms и не пустой ли он
   if (lesson.rooms && Array.isArray(lesson.rooms) && lesson.rooms.length > 0) {
     lesson.rooms.forEach(r => {
       const li = document.createElement('li');
-      // r может быть объектом или строкой, в данном JSON это строки
       if (typeof r === 'object' && r.url) {
          li.appendChild(createSafeLink(r.name, r.url));
       } else {
@@ -111,16 +109,28 @@ function updateLayoutMode() {
 
   if (isDesktopView()) {
     weekContainer.classList.add('is-desktop-grid');
-    // На десктопе скрываем активные классы мобильных табов, чтобы не мешали
+    // На десктопе скрываем активные классы мобильных табов, чтобы стили сетки работали корректно
     document.querySelectorAll('.mobile-day').forEach(d => d.classList.remove('is-selected'));
   } else {
     weekContainer.classList.remove('is-desktop-grid');
-    // Возвращаем видимость выбранному дню на мобильном
-    const activeTab = document.querySelector('.day-tab.is-selected');
+    
+    // Пытаемся найти уже активный таб
+    let activeTab = document.querySelector('.day-tab.is-selected');
+    
+    // Если активного таба нет (страховка), берем первый
+    if (!activeTab) {
+        activeTab = document.querySelector('.day-tab');
+        if (activeTab) {
+            activeTab.classList.add('is-selected');
+        }
+    }
+
     if (activeTab) {
       const date = activeTab.dataset.date;
       const daySection = document.querySelector(`.mobile-day[data-date="${date}"]`);
-      if (daySection) daySection.classList.add('is-selected');
+      if (daySection) {
+          daySection.classList.add('is-selected');
+      }
     }
   }
 }
@@ -159,7 +169,6 @@ async function initSchedule() {
   showLoading();
 
   try {
-    // Примечание: функции weeksUrl() и scheduleUrl() должны быть определены в config.js
     const weeksResponse = await fetch(weeksUrl());
     if (!weeksResponse.ok) throw new Error(`Ошибка загрузки недель: ${weeksResponse.status}`);
     const weeksData = await weeksResponse.json();
@@ -179,7 +188,7 @@ async function initSchedule() {
 
     const today = todayIso();
     let defaultDateToSelect = weekData.days[0]?.date;
-    let todayIndex = -1; // Индекс сегодняшнего дня для подсветки колонки
+    let todayIndex = -1; 
 
     // --- Создаём заголовки для десктопной сетки ---
     const headerRow = document.createElement('div');
@@ -200,7 +209,6 @@ async function initSchedule() {
       const headerCell = document.createElement('div');
       headerCell.className = 'grid-cell day-header';
       
-      // --- ИЗМЕНЕНИЕ: Подсветка заголовка колонки сегодня ---
       if (day.date === today) {
         headerCell.classList.add('is-today-header');
         todayIndex = index;
@@ -217,7 +225,6 @@ async function initSchedule() {
       tabBtn.dataset.date = day.date;
       tabBtn.innerHTML = `<span class="day-tab__name">${dayName}</span><span class="day-tab__date">${tabTextDate}</span>`;
       
-      // --- ИЗМЕНЕНИЕ: Подсветка таба сегодня ---
       if (day.date === today) {
         tabBtn.classList.add('is-today');
         defaultDateToSelect = day.date;
@@ -307,7 +314,6 @@ async function initSchedule() {
         const cell = document.createElement('div');
         cell.className = 'grid-cell day-cell';
         
-        // --- ИЗМЕНЕНИЕ: Подсветка всей колонки сегодняшнего дня ---
         if (colIndex === todayIndex) {
            cell.classList.add('is-today-column');
         }
@@ -334,14 +340,16 @@ async function initSchedule() {
 
     updateLayoutMode();
 
-    // Активация таба по умолчанию (если мы не на десктопе)
-    if (!isDesktopView()) {
-      const defaultTab = dayTabs.querySelector(`.day-tab[data-date="${defaultDateToSelect}"]`);
-      const defaultDay = weekContainer.querySelector(`.mobile-day[data-date="${defaultDateToSelect}"]`);
-      if (defaultTab && defaultDay) {
-        defaultTab.classList.add('is-selected');
-        defaultDay.classList.add('is-selected');
-      }
+    // --- ИСПРАВЛЕНИЕ: Активация таба по умолчанию ВСЕГДА ---
+    // Мы делаем это независимо от текущей ширины экрана.
+    // Если сейчас Desktop: классы добавятся, но CSS их скроет/игнорирует из-за .is-desktop-grid.
+    // Если потом сузить окно: updateLayoutMode увидит .is-selected и покажет нужный день.
+    const defaultTab = dayTabs.querySelector(`.day-tab[data-date="${defaultDateToSelect}"]`);
+    const defaultDay = weekContainer.querySelector(`.mobile-day[data-date="${defaultDateToSelect}"]`);
+    
+    if (defaultTab && defaultDay) {
+      defaultTab.classList.add('is-selected');
+      defaultDay.classList.add('is-selected');
     }
 
     window.addEventListener('resize', updateLayoutMode);
