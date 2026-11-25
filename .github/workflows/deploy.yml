@@ -1,0 +1,23 @@
+name: Deploy to Amvera
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Amvera
+        env:
+          AMVERA_USER: ${{ secrets.AMVERA_USER }}
+          AMVERA_PASS: ${{ secrets.AMVERA_PASS }}
+        run: |
+          git remote add amvera https://${AMVERA_USER}:${AMVERA_PASS}@git.msk1.amvera.ru/whitebear/tpu-freshman-hub
+          git push amvera HEAD:master --force
