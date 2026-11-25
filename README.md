@@ -270,3 +270,16 @@ docker compose down
     python -m backend.parser.fetch
 
 Файлы сохраняются в `backend/data/raw/` (в git не попадают).
+
+## Как обновить расписание
+
+```bash
+python -m backend.parser.fetch     # скачать недели с ro-rasp
+python -m backend.parser.parse     # собрать backend/data/schedule.json
+git diff --stat                    # посмотреть, что изменилось
+```
+
+Дальше обычный PR с обновлённым `schedule.json`. В Docker:
+```bash
+docker compose run --rm web python -m backend.parser.fetch
+docker compose run --rm web python -m backend.parser.parse
