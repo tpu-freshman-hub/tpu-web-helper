@@ -283,3 +283,4 @@ git diff --stat                    # посмотреть, что изменил
 ```bash
 docker compose run --rm web python -m backend.parser.fetch
 docker compose run --rm web python -m backend.parser.parse
+```
