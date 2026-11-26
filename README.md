@@ -310,4 +310,18 @@ docker compose down
 
 Для исключения зависимости проекта от одного аккаунта доступ к управлению проектом на хостинге выдан **двум участникам команды**:
 1. **Владелец проекта:** Кочергин Артур (`whitebear`).
-2. 
+
+
+## Как обновить расписание
+
+```bash
+python -m backend.parser.fetch     # скачать недели с ro-rasp
+python -m backend.parser.parse     # собрать backend/data/schedule.json
+git diff --stat                    # посмотреть, что изменилось
+```
+
+Дальше обычный PR с обновлённым `schedule.json`. В Docker:
+```bash
+docker compose run --rm web python -m backend.parser.fetch
+docker compose run --rm web python -m backend.parser.parse
+```
