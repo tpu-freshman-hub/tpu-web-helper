@@ -2,20 +2,36 @@
 Разбор страницы недели ro-rasp.tpu.ru: HTML + ключ → список занятий.
 
 Запуск из корня репозитория:
-    python -m backend.parser.parse 12    # напечатать занятия недели 12
+    python -m backend.parser.parse       # собрать backend/data/schedule.json
+    python -m backend.parser.parse 12    # напечатать занятия недели 12 (без записи)
 
 Страницы и ключи берутся из backend/data/raw/ (их скачивает
 python -m backend.parser.fetch). Как устроена разметка — в PARSER_NOTES.md.
 """
+import json
 import sys
-from datetime import datetime
+from collections import Counter
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Tag
 
 from backend.parser.rasp_decrypt import decrypt
 
-RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+RAW_DIR = DATA_DIR / "raw"
+SCHEDULE_PATH = DATA_DIR / "schedule.json"
+TEACHERS_PATH = DATA_DIR / "teachers.json"
+DISCIPLINES_PATH = DATA_DIR / "disciplines.json"
+
+GROUP = "8К64"
+SOURCE = "https://ro-rasp.tpu.ru/gruppa_45259/2026/{week}/view.html"
+SEMESTER_START = date(2026, 8, 31)  # понедельник недели 1
+FIRST_WEEK = 1
+LAST_WEEK = 18
+BREAK_WEEK = 10  # неделя смены расписания
+TOMSK = timezone(timedelta(hours=7))  # Томск — UTC+7, перехода на летнее время нет
+DAYS_IN_WEEK = 6  # Пн–Сб
 
 LESSON_TYPES = {
     "Лекция": "lecture",
@@ -160,6 +176,124 @@ def parse_week(html: str, key: str) -> list[dict]:
     return [lesson for day in by_day for lesson in day]
 
 
+def week_info(number: int) -> dict:
+    """Паспорт недели: даты, чётность и период считаются от номера недели."""
+    start = SEMESTER_START + timedelta(days=7 * (number - 1))  # понедельник
+    end = start + timedelta(days=DAYS_IN_WEEK - 1)  # суббота
+    if number < BREAK_WEEK:
+        period = "first"
+    elif number == BREAK_WEEK:
+        period = "break"
+    else:
+        period = "second"
+    return {
+        "number": number,
+        "start": start.isoformat(),
+        "end": end.isoformat(),
+        "parity": "even" if number % 2 == 0 else "odd",
+        "period": period,
+    }
+
+
+def build_week(number: int, lessons: list[dict]) -> dict:
+    """Собирает неделю: ровно шесть дней, даты считаются от номера недели."""
+    info = week_info(number)
+    monday = date.fromisoformat(info["start"])
+    days = []
+    for weekday in range(1, DAYS_IN_WEEK + 1):
+        day_lessons = [
+            {k: v for k, v in lesson.items() if k not in ("date", "weekday")}
+            for lesson in lessons
+            if lesson["weekday"] == weekday
+        ]
+        # sorted() устойчивая: занятия одной пары остаются в порядке сайта
+        day_lessons = sorted(day_lessons, key=lambda lesson: lesson["pair"])
+        days.append({
+            "date": (monday + timedelta(days=weekday - 1)).isoformat(),
+            "weekday": weekday,
+            "lessons": day_lessons,
+        })
+    return {**info, "days": days}
+
+
+def build_schedule() -> dict:
+    """Читает недели 1–18 из raw/ и собирает весь семестр.
+
+    Если файла какой-то недели нет, бросает FileNotFoundError: неполный
+    schedule.json хуже, чем отсутствие нового.
+    """
+    weeks = []
+    for number in range(FIRST_WEEK, LAST_WEEK + 1):
+        html, key = read_raw_week(number)
+        weeks.append(build_week(number, parse_week(html, key)))
+    return {
+        "group": GROUP,
+        "source": SOURCE,
+        "updated_at": datetime.now(TOMSK).isoformat(timespec="seconds"),
+        "weeks": weeks,
+    }
+
+
+def save_schedule(schedule: dict, path: Path = SCHEDULE_PATH) -> None:
+    with open(path, "w", encoding="utf-8") as file:
+        json.dump(schedule, file, ensure_ascii=False, indent=2)
+        file.write("\n")
+
+
+def _known_names(path: Path) -> set[str] | None:
+    """Имена из справочника (teachers.json / disciplines.json) или None, если файла нет.
+
+    Формат справочника заранее неизвестен, поэтому собираем строки отовсюду:
+    из ключей словаря, из элементов списка и из строковых значений вложенных словарей.
+    """
+    if not path.exists():
+        return None
+    names: set[str] = set()
+
+    def collect(value) -> None:
+        if isinstance(value, str):
+            names.add(value)
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                names.add(key)
+                collect(item)
+        elif isinstance(value, list):
+            for item in value:
+                collect(item)
+
+    collect(json.loads(path.read_text(encoding="utf-8")))
+    return names
+
+
+def print_selfcheck(schedule: dict) -> None:
+    """Подсказки для фронтенда: что встречается и чего нет в справочниках."""
+    lessons = [
+        lesson
+        for week in schedule["weeks"]
+        for day in week["days"]
+        for lesson in day["lessons"]
+    ]
+    disciplines = Counter(lesson["discipline"] for lesson in lessons)
+    teachers = Counter(t for lesson in lessons for t in lesson["teachers"])
+
+    print("\nПредметы (сколько раз встречаются):")
+    for name, count in disciplines.most_common():
+        print(f"  {count:4d}  {name}")
+
+    for title, counter, path in (
+        ("Преподаватели", teachers, TEACHERS_PATH),
+        ("Предметы", disciplines, DISCIPLINES_PATH),
+    ):
+        known = _known_names(path)
+        if known is None:
+            print(f"\n{title}: нет файла {path.name}, сверка пропущена")
+            continue
+        missing = sorted(name for name in counter if name not in known)
+        print(f"\n{title}, которых нет в {path.name}: {len(missing)}")
+        for name in missing:
+            print(f"  {name}")
+
+
 def read_raw_week(week: int) -> tuple[str, str]:
     """Читает week_NN.html и week_NN.key, скачанные fetch.py."""
     html_path = RAW_DIR / f"week_{week:02d}.html"
@@ -173,9 +307,9 @@ def read_raw_week(week: int) -> tuple[str, str]:
 
 
 def format_lesson(lesson: dict) -> str:
-    date = datetime.fromisoformat(lesson["date"]).strftime("%d.%m")
+    day = datetime.fromisoformat(lesson["date"]).strftime("%d.%m")
     return " | ".join([
-        f"{WEEKDAY_SHORT[lesson['weekday'] - 1]} {date}",
+        f"{WEEKDAY_SHORT[lesson['weekday'] - 1]} {day}",
         f"{lesson['pair']} пара {lesson['start']}–{lesson['end']}",
         f"{lesson['discipline']} [{lesson['type']}]",
         ", ".join(lesson["teachers"]) or "—",
@@ -184,15 +318,25 @@ def format_lesson(lesson: dict) -> str:
 
 
 def main() -> None:
-    week = int(sys.argv[1]) if len(sys.argv) > 1 else 12
     try:
-        html, key = read_raw_week(week)
+        if len(sys.argv) > 1:  # одна неделя: напечатать, ничего не записывая
+            week = int(sys.argv[1])
+            html, key = read_raw_week(week)
+            lessons = parse_week(html, key)
+            for lesson in lessons:
+                print(format_lesson(lesson))
+            print(f"Неделя {week}: {len(lessons)} занятий")
+            return
+        schedule = build_schedule()
     except FileNotFoundError as error:
         sys.exit(str(error))
-    lessons = parse_week(html, key)
-    for lesson in lessons:
-        print(format_lesson(lesson))
-    print(f"Неделя {week}: {len(lessons)} занятий")
+
+    for week in schedule["weeks"]:
+        count = sum(len(day["lessons"]) for day in week["days"])
+        print(f"Неделя {week['number']:2d}: {count} занятий")
+    save_schedule(schedule)
+    print(f"Готово: {len(schedule['weeks'])} недель → backend/data/schedule.json")
+    print_selfcheck(schedule)
 
 
 if __name__ == "__main__":
